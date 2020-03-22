@@ -11,11 +11,11 @@ import kotlin.math.max
 private const val LINE_LIMIT = 256
 private const val BUFFER_SIZE = 1024
 
+private const val SET_LINE_COMMAND = "1"
 private const val EXTEND_TOP_COMMAND = "2"
 private const val EXTEND_BOTTOM_COMMAND = "3"
 private const val REMOVE_TOP_COMMAND = "4"
 private const val REMOVE_BOTTOM_COMMAND = "5"
-private const val SET_LINE_COMMAND = "1"
 
 class LogViewingSession(
         private val wsSession: WebSocketSession,
@@ -156,7 +156,7 @@ class LogViewingSession(
 
     fun handle(request: String) {
         val scanner = Scanner(request).also {
-            it.useDelimiter("\|")
+            it.useDelimiter("\\|")
         }
         when (scanner.next()) {
             REMOVE_BOTTOM_COMMAND -> removeBottom()
