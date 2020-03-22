@@ -5,6 +5,7 @@ import org.springframework.web.socket.WebSocketSession
 import java.nio.ByteBuffer
 import java.nio.channels.FileChannel
 import java.nio.file.Paths
+import java.util.*
 import kotlin.math.max
 
 private const val LINE_LIMIT = 256
@@ -14,7 +15,7 @@ private const val EXTEND_TOP_COMMAND = "2"
 private const val EXTEND_BOTTOM_COMMAND = "3"
 private const val REMOVE_TOP_COMMAND = "4"
 private const val REMOVE_BOTTOM_COMMAND = "5"
-private const val SET_LINE_COMMAND = "5"
+private const val SET_LINE_COMMAND = "1"
 
 class LogViewingSession(
         private val wsSession: WebSocketSession,
@@ -34,7 +35,7 @@ class LogViewingSession(
      * the last line is set as starting line for current session
      * [requestedLine] is 1-indexed
      */
-    fun setLine(requestedLine: Int) {
+    private fun setLine(requestedLine: Int) {
         var currentLine = 0
         var bytesRead = 0L
         var lastFullLineStart = 0L
@@ -63,7 +64,7 @@ class LogViewingSession(
         wsSession.sendMessage(TextMessage("$SET_LINE_COMMAND|$currentLine|$part"))
     }
 
-    fun extendTop() {
+    private fun extendTop() {
         val next = nextUp(topBorder)
         if (next.second) {
             wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|0"))
@@ -73,7 +74,7 @@ class LogViewingSession(
         }
     }
 
-    fun extendBottom() {
+    private fun extendBottom() {
         val next = nextDown(bottomBorder)
         if (next.second) {
             wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|0"))
@@ -83,7 +84,7 @@ class LogViewingSession(
         }
     }
 
-    fun removeTop() {
+    private fun removeTop() {
         val next = nextDown(topBorder)
         if (next.second) {
             topBorder = next.first
@@ -91,7 +92,7 @@ class LogViewingSession(
         wsSession.sendMessage(TextMessage("$REMOVE_TOP_COMMAND|${next.second}"))
     }
 
-    fun removeBottom() {
+    private fun removeBottom() {
         val next = nextUp(bottomBorder)
         if (next.second) {
             bottomBorder = next.first
@@ -151,5 +152,21 @@ class LogViewingSession(
             }
         }
         return resultBuilder.toString()
+    }
+
+    fun handle(request: String) {
+        val scanner = Scanner(request).also {
+            it.useDelimiter("\|")
+        }
+        when (scanner.next()) {
+            REMOVE_BOTTOM_COMMAND -> removeBottom()
+            REMOVE_TOP_COMMAND -> removeTop()
+            EXTEND_BOTTOM_COMMAND -> extendBottom()
+            EXTEND_TOP_COMMAND -> extendTop()
+            SET_LINE_COMMAND -> {
+                val line = scanner.nextInt()
+                setLine(line)
+            }
+        }
     }
 }
