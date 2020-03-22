@@ -26,8 +26,8 @@ class LogViewingSession(
 
     private lateinit var topBorder: Border
     private lateinit var bottomBorder: Border
-    private val buffer = ByteBuffer.allocate(BUFFER_SIZE)
-    private val partBuffer = ByteBuffer.allocate(LINE_LIMIT)
+    private val bufferArray = ByteArray(BUFFER_SIZE)
+    private val partBufferArray = ByteArray(LINE_LIMIT)
 
     /**
      * Starts reading from [requestedLine] line
@@ -41,11 +41,12 @@ class LogViewingSession(
         var lastFullLineStart = 0L
         var currentLineStart = 0L
         readingLoop@ while (true) {
+            val buffer = ByteBuffer.wrap(bufferArray)
             val currentRead = fileChannel.read(buffer)
             if (currentRead == 0) {
                 break
             }
-            for (i in 0..currentRead) {
+            for (i in 0 until currentRead) {
                 bytesRead++
                 if (buffer[i].toChar() == '\n') {
                     currentLine++
@@ -66,7 +67,7 @@ class LogViewingSession(
 
     private fun extendTop() {
         val next = nextUp(topBorder)
-        if (next.second) {
+        if (!next.second) {
             wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|0"))
         } else {
             topBorder = next.first
@@ -76,7 +77,7 @@ class LogViewingSession(
 
     private fun extendBottom() {
         val next = nextDown(bottomBorder)
-        if (next.second) {
+        if (!next.second) {
             wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|0"))
         } else {
             bottomBorder = next.first
@@ -108,7 +109,7 @@ class LogViewingSession(
             return border to false
         }
 
-        var newLineNumber = bottomBorder.lineNumber
+        var newLineNumber = border.lineNumber
         if (border.containsNewLine) {
             newLineNumber++
         }
@@ -117,6 +118,7 @@ class LogViewingSession(
 
     private fun nextUp(border: Border): Pair<Border, Boolean> {
         val prevFullPartStart = max(0, border.start - LINE_LIMIT)
+        val partBuffer = ByteBuffer.wrap(partBufferArray)
         fileChannel.read(partBuffer, prevFullPartStart)
         val prevPartBytes = partBuffer.array().copyOfRange(0, (border.start - prevFullPartStart).toInt())
         var prevStart = prevFullPartStart
@@ -133,7 +135,7 @@ class LogViewingSession(
 
         val prevPartOrLine = readLineOrPart(prevStart)
 
-        var newLineNumber = bottomBorder.lineNumber
+        var newLineNumber = border.lineNumber
         if (prevPartOrLine.contains('\n')) {
             newLineNumber--
         }
@@ -142,10 +144,11 @@ class LogViewingSession(
     }
 
     private fun readLineOrPart(start: Long): String {
+        val partBuffer = ByteBuffer.wrap(partBufferArray)
         val bytesRead = fileChannel.read(partBuffer, start)
 
         val resultBuilder = StringBuilder()
-        for (i in 0..bytesRead) {
+        for (i in 0 until bytesRead) {
             resultBuilder.append(partBuffer[i].toChar())
             if (partBuffer[i].toChar() == '\n') {
                 break
@@ -168,5 +171,9 @@ class LogViewingSession(
                 setLine(line)
             }
         }
+    }
+
+    fun close() {
+        fileChannel.close()
     }
 }

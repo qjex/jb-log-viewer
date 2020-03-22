@@ -7,40 +7,37 @@ function init(fileName, line) {
     let query = 'ws://' + location.host + '/view?file=' + fileName;
     ws = new WebSocket(query);
     ws.onmessage = function (data) {
-        showGreeting(data.data);
+        handler(data.data);
     };
     ws.onclose = function () {
         setTimeout(init, 1000, fileName, line)
     };
-    connected = true;
     container.scroll(handleScrollEvent);
     if (line == null) {
         line = 1
     }
-    setLine(line)
+    ws.onopen = function() {
+        setLine(line)
+    };
 }
 
 function handleScrollEvent() {
     if (container.scrollTop() < 20) {
         for (let i = 0; i < 10; i++) {
-            prependLine("new " + i);
-            removeBottom();
+            sendExtendTop();
+            sendRemoveBottom();
         }
     }
 
     if (container[0].scrollTop + container[0].clientHeight + 20 >= container[0].scrollHeight) {
         for (let i = 0; i < 10; i++) {
-            appendLine("new down " + i);
-            removeTop();
+            sendExtendBottom();
+            sendRemoveTop();
         }
-        console.log('Event Fired');
     }
 }
 
 function removeTop() {
-    if (linesLoaded() < 100) {
-        return
-    }
     let firstLine = $(".log_line:first");
     let nextLine = firstLine.next();
     let curOffset = container.scrollTop() - nextLine.offset().top;
@@ -49,9 +46,6 @@ function removeTop() {
 }
 
 function removeBottom() {
-    if (linesLoaded() < 100) {
-        return
-    }
     let lastLine = $(".log_line:last");
     lastLine.remove();
 }
@@ -73,20 +67,60 @@ function appendLine(line) {
 
 function setLine(line) {
     container.empty();
+    sendSetLine(line);
 
-    let selectedLine = container.append("<p class='log_line'>Line</p>");
     for (let i = 0; i < 20; i++) {
-        appendLine("Test after")
+        sendExtendBottom()
     }
     for (let i = 0; i < 20; i++) {
-        prependLine("Test")
+        sendExtendTop();
     }
 }
 
-function sendName() {
-    ws.send($("#name").val());
+function sendSetLine(line) {
+    ws.send("1|" + line);
 }
 
-function showGreeting(message) {
-    $("#greetings").append(" " + message + "");
+function sendExtendTop() {
+    ws.send("2");
+}
+
+function sendExtendBottom() {
+    ws.send("3");
+}
+
+function sendRemoveTop() {
+    if (linesLoaded() < 100) {
+        return
+    }
+    ws.send("4");
+}
+
+function sendRemoveBottom() {
+    if (linesLoaded() < 100) {
+        return
+    }
+    ws.send("5");
+}
+
+
+function handler(message) {
+    console.log(message);
+
+    let parts = message.split('|');
+    if (parts[1] === "0") {
+        return
+    }
+    if (parts[0] === "1" || parts[0] === "3") {
+        appendLine(parts[1] + ") " + parts[2]);
+    }
+    if (parts[0] === "2") {
+        prependLine(parts[1] + ") " + parts[2]);
+    }
+    if (parts[0] === "4" && parts[1] === "true") {
+        removeTop()
+    }
+    if (parts[0] === "5" && parts[1] === "true") {
+        removeBottom()
+    }
 }
