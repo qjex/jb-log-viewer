@@ -2,12 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Logs</title>
+    <script type="text/javascript" src="/log.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/log.css">
+    <title th:text="${fileName}"></title>
 </head>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    window.onload = function () {
+        init([[${fileName}]], [[${line}]])
+    };
+    /*]]>*/
+</script>
+
 <body>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<h1 th:text="${fileName}"></h1>
+
+<div id="container">
+
+</div>
 </body>
 </html>
