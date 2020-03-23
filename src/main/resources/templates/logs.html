@@ -2,12 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Logs</title>
+    <title>Log files</title>
 </head>
 <body>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
+<table>
+    <thead>
+    <tr>
+        <th>File</th>
+        <th>Date Modified</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:if="${files.empty}">
+        <td colspan="2"> No Files Available</td>
+    </tr>
+
+    <tr th:each="file : ${files}">
+        <td><a th:href="@{/log/{fileName}(fileName=${file.name})}" th:text="${file.name}">File</a></td>
+        <td><span th:text="${file.modificationDate}">Date Modified</span></td>
+    </tr>
+
+    </tbody>
+</table>
 </body>
 </html>
