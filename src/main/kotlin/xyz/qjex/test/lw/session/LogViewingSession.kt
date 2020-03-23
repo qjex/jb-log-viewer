@@ -16,14 +16,16 @@ private const val EXTEND_TOP_COMMAND = "2"
 private const val EXTEND_BOTTOM_COMMAND = "3"
 private const val REMOVE_TOP_COMMAND = "4"
 private const val REMOVE_BOTTOM_COMMAND = "5"
+private const val SERVER_APPEND_COMMAND = "6"
+private const val ERROR_COMMAND = "7"
 
 class LogViewingSession(
         private val wsSession: WebSocketSession,
         fileName: String
 ) {
 
-    private val fileChannel: FileChannel = FileChannel.open(Paths.get(fileName))
-
+    private val path = Paths.get(fileName)
+    private val fileChannel: FileChannel = FileChannel.open(path)
     private lateinit var topBorder: Border
     private lateinit var bottomBorder: Border
     private val bufferArray = ByteArray(BUFFER_SIZE)
@@ -43,7 +45,7 @@ class LogViewingSession(
         readingLoop@ while (true) {
             val buffer = ByteBuffer.wrap(bufferArray)
             val currentRead = fileChannel.read(buffer)
-            if (currentRead == 0) {
+            if (currentRead <= 0) {
                 break
             }
             for (i in 0 until currentRead) {
@@ -54,7 +56,7 @@ class LogViewingSession(
                     if (currentLine == requestedLine) {
                         break@readingLoop
                     }
-                    currentLineStart = bytesRead + 1
+                    currentLineStart = bytesRead
                 }
             }
         }
@@ -119,7 +121,13 @@ class LogViewingSession(
     private fun nextUp(border: Border): Pair<Border, Boolean> {
         val prevFullPartStart = max(0, border.start - LINE_LIMIT)
         val partBuffer = ByteBuffer.wrap(partBufferArray)
-        fileChannel.read(partBuffer, prevFullPartStart)
+        try {
+            fileChannel.read(partBuffer, prevFullPartStart)
+        } catch (e: Exception) {
+            // TODO correct hanling
+            sendError("error reading file")
+            throw e
+        }
         val prevPartBytes = partBuffer.array().copyOfRange(0, (border.start - prevFullPartStart).toInt())
         var prevStart = prevFullPartStart
         for (i in prevPartBytes.size - 2 downTo 0) {
@@ -145,7 +153,13 @@ class LogViewingSession(
 
     private fun readLineOrPart(start: Long): String {
         val partBuffer = ByteBuffer.wrap(partBufferArray)
-        val bytesRead = fileChannel.read(partBuffer, start)
+        val bytesRead = try {
+            fileChannel.read(partBuffer, start)
+        } catch (e: Exception) {
+            // TODO correct handling
+            sendError("error reading file")
+            throw e
+        }
 
         val resultBuilder = StringBuilder()
         for (i in 0 until bytesRead) {
@@ -175,5 +189,9 @@ class LogViewingSession(
 
     fun close() {
         fileChannel.close()
+    }
+
+    private fun sendError(errorMessage: String) {
+        wsSession.sendMessage(TextMessage("$ERROR_COMMAND|$errorMessage"))
     }
 }

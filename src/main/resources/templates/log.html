@@ -17,6 +17,9 @@
 </script>
 
 <body>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 <h1 th:text="${fileName}"></h1>
 
 <div id="container">

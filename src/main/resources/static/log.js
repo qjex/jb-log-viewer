@@ -1,10 +1,9 @@
-let connected = false;
 let ws;
 let container;
 
 function init(fileName, line) {
-    container = $("#container")
-    let query = 'ws://' + location.host + '/view?file=' + fileName;
+    container = $("#container");
+    let query = 'ws://' + location.host + '/view?fileName=' + fileName;
     ws = new WebSocket(query);
     ws.onmessage = function (data) {
         handler(data.data);
@@ -22,14 +21,15 @@ function init(fileName, line) {
 }
 
 function handleScrollEvent() {
-    if (container.scrollTop() < 20) {
+    console.log("scroll event triggered: " + container.scrollTop() + " " + container[0].clientHeight + " " + container[0].scrollHeight);
+    if (container.scrollTop() < 100) {
         for (let i = 0; i < 10; i++) {
             sendExtendTop();
             sendRemoveBottom();
         }
     }
 
-    if (container[0].scrollTop + container[0].clientHeight + 20 >= container[0].scrollHeight) {
+    if (container[0].scrollTop + container[0].clientHeight + 100 >= container[0].scrollHeight) {
         for (let i = 0; i < 10; i++) {
             sendExtendBottom();
             sendRemoveTop();
@@ -38,9 +38,11 @@ function handleScrollEvent() {
 }
 
 function removeTop() {
+    console.log("remove top");
     let firstLine = $(".log_line:first");
     let nextLine = firstLine.next();
     let curOffset = container.scrollTop() - nextLine.offset().top;
+    console.log("remove top: " + curOffset);
     firstLine.remove();
     container.scrollTop(nextLine.offset().top + curOffset)
 }
@@ -93,6 +95,7 @@ function sendRemoveTop() {
     if (linesLoaded() < 100) {
         return
     }
+    console.log("sent remove top");
     ws.send("4");
 }
 
