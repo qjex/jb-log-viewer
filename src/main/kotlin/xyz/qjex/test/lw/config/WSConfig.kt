@@ -10,6 +10,6 @@ import xyz.qjex.test.lw.api.WSHandler
 @EnableWebSocket
 class WSConfig : WebSocketConfigurer {
     override fun registerWebSocketHandlers(registry: WebSocketHandlerRegistry): Unit = with(registry) {
-        addHandler(WSHandler(), "/view")
+        addHandler(WSHandler(), "/view").withSockJS()
     }
 }

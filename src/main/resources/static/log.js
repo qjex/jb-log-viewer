@@ -4,8 +4,8 @@ let container;
 
 function init(fileName, line) {
     container = $("#container");
-    let query = 'ws://' + location.host + '/view?fileName=' + fileName;
-    ws = new WebSocket(query);
+    let query = 'http://' + location.host + '/view?fileName=' + fileName;
+    ws = new SockJS(query);
     ws.onmessage = function (data) {
         handler(data.data);
     };
@@ -22,7 +22,6 @@ function init(fileName, line) {
 }
 
 function handleScrollEvent() {
-    console.log("scroll event triggered: " + container.scrollTop() + " " + container[0].clientHeight + " " + container[0].scrollHeight);
     if (container.scrollTop() < 400) {
         for (let i = 0; i < 10; i++) {
             sendExtendTop();
@@ -39,11 +38,9 @@ function handleScrollEvent() {
 }
 
 function removeTop() {
-    console.log("remove top");
     let firstLine = $(".log_line:first");
     let nextLine = firstLine.next();
     let curOffset = container.scrollTop() - nextLine.offset().top;
-    console.log("remove top: " + curOffset);
     firstLine.remove();
     container.scrollTop(nextLine.offset().top + curOffset)
 }
@@ -102,7 +99,6 @@ function sendRemoveTop() {
     if (linesLoaded() < 100) {
         return
     }
-    console.log("sent remove top");
     ws.send("4");
 }
 
@@ -111,10 +107,6 @@ function sendRemoveBottom() {
         return
     }
     ws.send("5");
-}
-
-function sendPong() {
-    ws.send("8")
 }
 
 function handler(message) {
@@ -151,9 +143,6 @@ function handler(message) {
             break;
         case "7":
             setError(parts[1]);
-            break;
-        case "8":
-            sendPong();
             break;
     }
 }
