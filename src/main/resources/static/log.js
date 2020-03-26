@@ -1,5 +1,6 @@
 let ws;
 let container;
+// TODO add command constants
 
 function init(fileName, line) {
     container = $("#container");
@@ -9,27 +10,27 @@ function init(fileName, line) {
         handler(data.data);
     };
     ws.onclose = function () {
-        setTimeout(init, 1000, fileName, line)
+        setTimeout(init, 5000, fileName, line)
     };
     container.scroll(handleScrollEvent);
     if (line == null) {
         line = 1
     }
-    ws.onopen = function() {
+    ws.onopen = function () {
         setLine(line)
     };
 }
 
 function handleScrollEvent() {
     console.log("scroll event triggered: " + container.scrollTop() + " " + container[0].clientHeight + " " + container[0].scrollHeight);
-    if (container.scrollTop() < 100) {
+    if (container.scrollTop() < 400) {
         for (let i = 0; i < 10; i++) {
             sendExtendTop();
             sendRemoveBottom();
         }
     }
 
-    if (container[0].scrollTop + container[0].clientHeight + 100 >= container[0].scrollHeight) {
+    if (container[0].scrollTop + container[0].clientHeight + 400 >= container[0].scrollHeight) {
         for (let i = 0; i < 10; i++) {
             sendExtendBottom();
             sendRemoveTop();
@@ -79,6 +80,12 @@ function setLine(line) {
     }
 }
 
+function setError(error) {
+    container.empty();
+    container.append('<p class="error">' + error + '</p>');
+    ws.close();
+}
+
 function sendSetLine(line) {
     ws.send("1|" + line);
 }
@@ -106,24 +113,47 @@ function sendRemoveBottom() {
     ws.send("5");
 }
 
+function sendPong() {
+    ws.send("8")
+}
 
 function handler(message) {
     console.log(message);
 
     let parts = message.split('|');
-    if (parts[1] === "0") {
-        return
-    }
-    if (parts[0] === "1" || parts[0] === "3") {
-        appendLine(parts[1] + ") " + parts[2]);
-    }
-    if (parts[0] === "2") {
-        prependLine(parts[1] + ") " + parts[2]);
-    }
-    if (parts[0] === "4" && parts[1] === "true") {
-        removeTop()
-    }
-    if (parts[0] === "5" && parts[1] === "true") {
-        removeBottom()
+    switch (parts[0]) {
+        case "1":
+        case "3":
+            if (parts[1] === "0") { // no new lines no append
+                break
+            }
+            appendLine(parts[1] + ") " + parts[2]);
+            break;
+        case "2":
+            if (parts[1] === "0") { // no new lines no prepend
+                break
+            }
+            prependLine(parts[1] + ") " + parts[2]);
+            break;
+        case "4":
+            if (parts[1] === "true") {
+                removeTop()
+            }
+            break;
+        case "5":
+            if (parts[1] === "true") {
+                removeBottom()
+            }
+            break;
+        case "6":
+            // TODO: scroll to bottom
+            appendLine(parts[1] + ") " + parts[2]);
+            break;
+        case "7":
+            setError(parts[1]);
+            break;
+        case "8":
+            sendPong();
+            break;
     }
 }

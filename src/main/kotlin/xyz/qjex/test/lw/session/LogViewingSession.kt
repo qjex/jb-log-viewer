@@ -5,6 +5,7 @@ import org.springframework.web.socket.WebSocketSession
 import java.nio.ByteBuffer
 import java.nio.channels.FileChannel
 import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
 import java.util.*
 import kotlin.math.max
 
@@ -25,7 +26,7 @@ class LogViewingSession(
 ) {
 
     private val path = Paths.get(fileName)
-    private val fileChannel: FileChannel = FileChannel.open(path)
+    private val fileChannel: FileChannel = FileChannel.open(path, StandardOpenOption.READ)
     private lateinit var topBorder: Border
     private lateinit var bottomBorder: Border
     private val bufferArray = ByteArray(BUFFER_SIZE)

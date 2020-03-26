@@ -3,28 +3,25 @@ package xyz.qjex.test.lw.api
 import org.springframework.web.socket.CloseStatus
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
+import org.springframework.web.socket.handler.ConcurrentWebSocketSessionDecorator
 import org.springframework.web.socket.handler.TextWebSocketHandler
 import xyz.qjex.test.lw.session.LogViewingSession
-import java.util.concurrent.ConcurrentHashMap
 
 private const val SESSION = "session"
+private const val TIME_TO_SEND_MS = 5000
+private const val BUFFER_SIZE_LIMIT_BYTES = 1024
 
 class WSHandler : TextWebSocketHandler() {
 
-    private val requests = ConcurrentHashMap<String, String>()
-
     override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {
-        val remoteAddress = session.remoteAddress.toString()
-        if (message.isLast) {
-            val request = (requests.remove(remoteAddress) ?: "") + message.payload
-            (session.attributes[SESSION] as LogViewingSession).handle(request)
-        } else {
-            requests.merge(remoteAddress, message.payload) { a, b: String -> a + b }
-        }
+        (session.attributes[SESSION] as LogViewingSession).handle(message.payload)
     }
 
     override fun afterConnectionEstablished(session: WebSocketSession) {
-        session.attributes[SESSION] = LogViewingSession(session, session.uri!!.query.substringAfter("="))
+        session.attributes[SESSION] = LogViewingSession(
+                ConcurrentWebSocketSessionDecorator(session, TIME_TO_SEND_MS, BUFFER_SIZE_LIMIT_BYTES),
+                session.uri!!.query.substringAfter("=") // TODO parse correctly
+        )
     }
 
     override fun afterConnectionClosed(session: WebSocketSession, status: CloseStatus) {

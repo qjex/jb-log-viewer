@@ -8,6 +8,10 @@
     overflow-anchor: none; /* Disable for webkit supporting scroll anchoring */
 }
 
+.error {
+    color: red;
+}
+
 #container::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
