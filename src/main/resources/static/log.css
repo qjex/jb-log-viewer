@@ -5,6 +5,7 @@
     border-style: solid;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
+    overflow-anchor: none; /* Disable for webkit supporting scroll anchoring */
 }
 
 #container::-webkit-scrollbar {
