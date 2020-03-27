@@ -21,10 +21,9 @@
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
-<h1 th:text="${fileName}"></h1>
-
-<div id="container">
-
+<h1 th:if="${error} == null" th:text="${fileName}"></h1>
+<h1 th:if="${error} != null" th:inline="text">[[${fileName}]]: [[${error}]]</h1>
+<div th:if="${error} == null" id="container">
 </div>
 </body>
 </html>

@@ -33,11 +33,15 @@ class FilesService {
         }
     }
 
+    fun validFileName(fileName: String?): Boolean = fileName?.let {
+        Files.isRegularFile(logDirPath.resolve(Paths.get(it).fileName))
+    } ?: false
+
+    fun resolve(fileName: String): Path = logDirPath.resolve(fileName)
+
     fun getFiles(): List<FileData> = Files.walk(logDirPath, 1).use { fs ->
         fs.filter { Files.isRegularFile(it) }
                 .map { FileData(it.fileName.toString(), TIME_FORMAT.format(Files.getLastModifiedTime(it).toMillis())) }
                 .collect(toList())
     }
-
-
 }

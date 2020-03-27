@@ -7,6 +7,7 @@ data class Border(
 ) {
     val end
         get() = start + partOrLine.length
-    val containsNewLine
-        get() = partOrLine.contains("\n")
+    val containsNewLine: Boolean by lazy {
+        partOrLine.contains("\n")
+    }
 }

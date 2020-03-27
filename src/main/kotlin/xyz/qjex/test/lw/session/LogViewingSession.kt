@@ -1,16 +1,12 @@
 package xyz.qjex.test.lw.session
 
+import org.slf4j.LoggerFactory
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
-import java.nio.ByteBuffer
-import java.nio.channels.FileChannel
+import xyz.qjex.test.lw.service.FilesService
 import java.nio.file.Paths
-import java.nio.file.StandardOpenOption
 import java.util.*
-import kotlin.math.max
-
-private const val LINE_LIMIT = 256
-private const val BUFFER_SIZE = 1024
+import java.util.concurrent.Executors
 
 private const val SET_LINE_COMMAND = "1"
 private const val EXTEND_TOP_COMMAND = "2"
@@ -20,156 +16,82 @@ private const val REMOVE_BOTTOM_COMMAND = "5"
 private const val SERVER_APPEND_COMMAND = "6"
 private const val ERROR_COMMAND = "7"
 
+private const val FOLLOWER_UPDATE_DELAY_MS = 1000
+
+private val LOGGER = LoggerFactory.getLogger(LogViewingSession::class.java)
+
 class LogViewingSession(
+        private val filesService: FilesService,
         private val wsSession: WebSocketSession,
-        fileName: String
+        fileName: String?
 ) {
+    private lateinit var logReader: LogReader
+
+    init {
+        if (validateFileName(fileName)) {
+            logReader = LogReader(filesService.resolve(fileName!!))
+        } else {
+            wsSession.close()
+        }
+    }
+
+    private fun validateFileName(fileName: String?): Boolean {
+        if (fileName == null) {
+            sendError("fileName not specified")
+            return false
+        }
+        if (!filesService.validFileName(fileName)) {
+            sendError("File not found")
+            return false
+        }
+        return true
+    }
 
     private val path = Paths.get(fileName)
-    private val fileChannel: FileChannel = FileChannel.open(path, StandardOpenOption.READ)
     private lateinit var topBorder: Border
     private lateinit var bottomBorder: Border
-    private val bufferArray = ByteArray(BUFFER_SIZE)
-    private val partBufferArray = ByteArray(LINE_LIMIT)
+    private val scheduler = Executors.newScheduledThreadPool(1)
 
-    /**
-     * Starts reading from [requestedLine] line
-     * if [requestedLine] is bigger than the amount of lines in file,
-     * the last line is set as starting line for current session
-     * [requestedLine] is 1-indexed
-     */
     private fun setLine(requestedLine: Int) {
-        var currentLine = 0
-        var bytesRead = 0L
-        var lastFullLineStart = 0L
-        var currentLineStart = 0L
-        readingLoop@ while (true) {
-            val buffer = ByteBuffer.wrap(bufferArray)
-            val currentRead = fileChannel.read(buffer)
-            if (currentRead <= 0) {
-                break
-            }
-            for (i in 0 until currentRead) {
-                bytesRead++
-                if (buffer[i].toChar() == '\n') {
-                    currentLine++
-                    lastFullLineStart = currentLineStart
-                    if (currentLine == requestedLine) {
-                        break@readingLoop
-                    }
-                    currentLineStart = bytesRead
-                }
-            }
-        }
-
-        val part = readLineOrPart(lastFullLineStart)
-        topBorder = Border(currentLine, lastFullLineStart, part)
-        bottomBorder = Border(currentLine, lastFullLineStart, part)
-        wsSession.sendMessage(TextMessage("$SET_LINE_COMMAND|$currentLine|$part"))
+        topBorder = logReader.findBorderByLine(requestedLine)
+        bottomBorder = topBorder
+        wsSession.sendMessage(TextMessage("$SET_LINE_COMMAND|${topBorder.lineNumber}|${topBorder.partOrLine}"))
     }
 
     private fun extendTop() {
-        val next = nextUp(topBorder)
-        if (!next.second) {
+        val next = logReader.nextTop(topBorder)
+        if (!next.moved) {
             wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|0"))
         } else {
-            topBorder = next.first
+            topBorder = next.border
             wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|${topBorder.lineNumber}|${topBorder.partOrLine}"))
         }
     }
 
     private fun extendBottom() {
-        val next = nextDown(bottomBorder)
-        if (!next.second) {
+        val next = logReader.nextBottom(bottomBorder)
+        if (!next.moved) {
             wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|0"))
         } else {
-            bottomBorder = next.first
+            bottomBorder = next.border
             wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|${bottomBorder.lineNumber}|${bottomBorder.partOrLine}"))
         }
     }
 
     private fun removeTop() {
-        val next = nextDown(topBorder)
-        if (next.second) {
-            topBorder = next.first
+        val next = logReader.nextBottom(topBorder)
+        if (next.moved) {
+            topBorder = next.border
         }
-        wsSession.sendMessage(TextMessage("$REMOVE_TOP_COMMAND|${next.second}"))
+        wsSession.sendMessage(TextMessage("$REMOVE_TOP_COMMAND|${next.moved}"))
     }
 
     private fun removeBottom() {
-        val next = nextUp(bottomBorder)
-        if (next.second) {
-            bottomBorder = next.first
+        val next = logReader.nextTop(bottomBorder)
+        if (next.moved) {
+            bottomBorder = next.border
         }
-        wsSession.sendMessage(TextMessage("$REMOVE_BOTTOM_COMMAND|${next.second}"))
-    }
-
-    private fun nextDown(border: Border): Pair<Border, Boolean> {
-        val nextStart = border.end
-        val nextPartOrLine = readLineOrPart(nextStart)
-
-        if (nextPartOrLine.isEmpty()) {
-            return border to false
-        }
-
-        var newLineNumber = border.lineNumber
-        if (border.containsNewLine) {
-            newLineNumber++
-        }
-        return Border(newLineNumber, nextStart, nextPartOrLine) to true
-    }
-
-    private fun nextUp(border: Border): Pair<Border, Boolean> {
-        val prevFullPartStart = max(0, border.start - LINE_LIMIT)
-        val partBuffer = ByteBuffer.wrap(partBufferArray)
-        try {
-            fileChannel.read(partBuffer, prevFullPartStart)
-        } catch (e: Exception) {
-            // TODO correct hanling
-            sendError("error reading file")
-            throw e
-        }
-        val prevPartBytes = partBuffer.array().copyOfRange(0, (border.start - prevFullPartStart).toInt())
-        var prevStart = prevFullPartStart
-        for (i in prevPartBytes.size - 2 downTo 0) {
-            if (prevPartBytes[i].toChar() == '\n') {
-                prevStart += i + 1
-                break
-            }
-        }
-
-        if (prevStart == border.start) {
-            return border to false
-        }
-
-        val prevPartOrLine = readLineOrPart(prevStart)
-
-        var newLineNumber = border.lineNumber
-        if (prevPartOrLine.contains('\n')) {
-            newLineNumber--
-        }
-
-        return Border(newLineNumber, prevStart, prevPartOrLine) to true
-    }
-
-    private fun readLineOrPart(start: Long): String {
-        val partBuffer = ByteBuffer.wrap(partBufferArray)
-        val bytesRead = try {
-            fileChannel.read(partBuffer, start)
-        } catch (e: Exception) {
-            // TODO correct handling
-            sendError("error reading file")
-            throw e
-        }
-
-        val resultBuilder = StringBuilder()
-        for (i in 0 until bytesRead) {
-            resultBuilder.append(partBuffer[i].toChar())
-            if (partBuffer[i].toChar() == '\n') {
-                break
-            }
-        }
-        return resultBuilder.toString()
+        wsSession.sendMessage(TextMessage("$REMOVE_BOTTOM_COMMAND|${next.moved}"))
     }
 
     fun handle(request: String) {
@@ -189,7 +111,7 @@ class LogViewingSession(
     }
 
     fun close() {
-        fileChannel.close()
+        logReader.close()
     }
 
     private fun sendError(errorMessage: String) {

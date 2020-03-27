@@ -1,5 +1,7 @@
 let ws;
 let container;
+let error = false;
+
 // TODO add command constants
 
 function init(fileName, line) {
@@ -10,7 +12,9 @@ function init(fileName, line) {
         handler(data.data);
     };
     ws.onclose = function () {
-        setTimeout(init, 5000, fileName, line)
+        if (!error) {
+            setTimeout(init, 5000, fileName, line)
+        }
     };
     container.scroll(handleScrollEvent);
     if (line == null) {
@@ -78,6 +82,7 @@ function setLine(line) {
 }
 
 function setError(error) {
+    error = true;
     container.empty();
     container.append('<p class="error">' + error + '</p>');
     ws.close();
