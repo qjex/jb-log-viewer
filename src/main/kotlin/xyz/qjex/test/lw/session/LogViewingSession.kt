@@ -3,7 +3,9 @@ package xyz.qjex.test.lw.session
 import org.slf4j.LoggerFactory
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
+import xyz.qjex.test.lw.reader.LogReader
 import xyz.qjex.test.lw.service.FilesService
+import java.lang.StringBuilder
 import java.nio.file.Paths
 import java.util.*
 import java.util.concurrent.Executors
@@ -11,13 +13,11 @@ import java.util.concurrent.Executors
 private const val SET_LINE_COMMAND = "1"
 private const val EXTEND_TOP_COMMAND = "2"
 private const val EXTEND_BOTTOM_COMMAND = "3"
-private const val REMOVE_TOP_COMMAND = "4"
-private const val REMOVE_BOTTOM_COMMAND = "5"
-private const val SERVER_APPEND_COMMAND = "6"
-private const val ERROR_COMMAND = "7"
+private const val SERVER_APPEND_COMMAND = "4"
+private const val ERROR_COMMAND = "5"
 
 private const val FOLLOWER_UPDATE_DELAY_MS = 1000
-
+private const val MAX_LOADED_PARTS = 500
 private val LOGGER = LoggerFactory.getLogger(LogViewingSession::class.java)
 
 class LogViewingSession(
@@ -48,50 +48,52 @@ class LogViewingSession(
     }
 
     private val path = Paths.get(fileName)
-    private lateinit var topBorder: Border
-    private lateinit var bottomBorder: Border
     private val scheduler = Executors.newScheduledThreadPool(1)
+    private val loadedBlocks: Deque<Block> = LinkedList()
+    private var loadedParts = 0
 
     private fun setLine(requestedLine: Int) {
-        topBorder = logReader.findBorderByLine(requestedLine)
-        bottomBorder = topBorder
-        wsSession.sendMessage(TextMessage("$SET_LINE_COMMAND|${topBorder.lineNumber}|${topBorder.partOrLine}"))
+        val block = logReader.findBlockByLine(requestedLine)
+        loadedBlocks.clear()
+        loadedBlocks.addFirst(block)
+        loadedParts = block.parts.size
+        sendExtendResponse(EXTEND_BOTTOM_COMMAND, 0, block)
     }
 
     private fun extendTop() {
-        val next = logReader.nextTop(topBorder)
-        if (!next.moved) {
-            wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|0"))
-        } else {
-            topBorder = next.border
-            wsSession.sendMessage(TextMessage("$EXTEND_TOP_COMMAND|${topBorder.lineNumber}|${topBorder.partOrLine}"))
+        with(logReader.nextTopBlock(loadedBlocks.first)) {
+            if (!moved) {
+                sendExtendResponse(EXTEND_TOP_COMMAND)
+            } else {
+                loadedBlocks.addFirst(block)
+                loadedParts += block.parts.size
+                val toDelete = cleanUp { loadedBlocks.pollLast() }
+                sendExtendResponse(EXTEND_TOP_COMMAND, toDelete, block)
+            }
         }
     }
 
     private fun extendBottom() {
-        val next = logReader.nextBottom(bottomBorder)
-        if (!next.moved) {
-            wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|0"))
-        } else {
-            bottomBorder = next.border
-            wsSession.sendMessage(TextMessage("$EXTEND_BOTTOM_COMMAND|${bottomBorder.lineNumber}|${bottomBorder.partOrLine}"))
+        with(logReader.nextBottomBlock(loadedBlocks.last)) {
+            if (!moved) {
+                sendExtendResponse(EXTEND_BOTTOM_COMMAND)
+            } else {
+                loadedBlocks.addLast(block)
+                loadedParts += block.parts.size
+                val toDelete = cleanUp { loadedBlocks.pollFirst() }
+                sendExtendResponse(EXTEND_BOTTOM_COMMAND, toDelete, block)
+            }
         }
     }
 
-    private fun removeTop() {
-        val next = logReader.nextBottom(topBorder)
-        if (next.moved) {
-            topBorder = next.border
+    private fun cleanUp(cleanUpFunction: () -> Block): Int {
+        var toDelete = 0
+        while (loadedBlocks.size > 2 && loadedParts > MAX_LOADED_PARTS) {
+            val cleaned = cleanUpFunction().parts.size
+            loadedParts -= cleaned
+            toDelete += cleaned
         }
-        wsSession.sendMessage(TextMessage("$REMOVE_TOP_COMMAND|${next.moved}"))
-    }
-
-    private fun removeBottom() {
-        val next = logReader.nextTop(bottomBorder)
-        if (next.moved) {
-            bottomBorder = next.border
-        }
-        wsSession.sendMessage(TextMessage("$REMOVE_BOTTOM_COMMAND|${next.moved}"))
+        return toDelete
     }
 
     fun handle(request: String) {
@@ -99,8 +101,6 @@ class LogViewingSession(
             it.useDelimiter("\\|")
         }
         when (scanner.next()) {
-            REMOVE_BOTTOM_COMMAND -> removeBottom()
-            REMOVE_TOP_COMMAND -> removeTop()
             EXTEND_BOTTOM_COMMAND -> extendBottom()
             EXTEND_TOP_COMMAND -> extendTop()
             SET_LINE_COMMAND -> {
@@ -116,5 +116,14 @@ class LogViewingSession(
 
     private fun sendError(errorMessage: String) {
         wsSession.sendMessage(TextMessage("$ERROR_COMMAND|$errorMessage"))
+    }
+
+    private fun sendExtendResponse(command: String, toDelete: Int = 0, block: Block = Block(0, 0, emptyList())) {
+        val commandBuilder = StringBuilder()
+        commandBuilder.append("$command|$toDelete|${block.parts.size}")
+        for (part in block.parts) {
+            commandBuilder.append("|${part.line}|${part.data}")
+        }
+        wsSession.sendMessage(TextMessage(commandBuilder.toString()))
     }
 }

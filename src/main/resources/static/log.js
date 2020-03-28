@@ -2,6 +2,13 @@ let ws;
 let container;
 let error = false;
 
+const SET_LINE_COMMAND = "1";
+const EXTEND_TOP_COMMAND = "2";
+const EXTEND_BOTTOM_COMMAND = "3";
+const SERVER_APPEND_COMMAND = "4";
+const ERROR_COMMAND = "5";
+let extendProcessed = true;
+
 // TODO add command constants
 
 function init(fileName, line) {
@@ -13,7 +20,7 @@ function init(fileName, line) {
     };
     ws.onclose = function () {
         if (!error) {
-            setTimeout(init, 5000, fileName, line)
+            // setTimeout(init, 5000, fileName, line)
         }
     };
     container.scroll(handleScrollEvent);
@@ -27,17 +34,11 @@ function init(fileName, line) {
 
 function handleScrollEvent() {
     if (container.scrollTop() < 400) {
-        for (let i = 0; i < 10; i++) {
-            sendExtendTop();
-            sendRemoveBottom();
-        }
+        sendExtendTop();
     }
 
     if (container[0].scrollTop + container[0].clientHeight + 400 >= container[0].scrollHeight) {
-        for (let i = 0; i < 10; i++) {
-            sendExtendBottom();
-            sendRemoveTop();
-        }
+        sendExtendBottom();
     }
 }
 
@@ -54,34 +55,28 @@ function removeBottom() {
     lastLine.remove();
 }
 
-function linesLoaded() {
-    return $(".log_line").length
+function makeLine(line) {
+    return '<p class="log_line" >' + line + '</p>'
 }
 
-function prependLine(line) {
+function prependData(data) {
     let firstLine = $(".log_line:first");
     let curOffset = container.scrollTop() - firstLine.offset().top;
-    container.prepend('<p class="log_line" >' + line + '</p>');
+    container.prepend(data);
     container.scrollTop(firstLine.offset().top + curOffset);
 }
 
-function appendLine(line) {
-    container.append('<p class="log_line" >' + line + '</p>');
+function appendData(data) {
+    container.append(data);
 }
 
 function setLine(line) {
     container.empty();
     sendSetLine(line);
-
-    for (let i = 0; i < 20; i++) {
-        sendExtendBottom()
-    }
-    for (let i = 0; i < 20; i++) {
-        sendExtendTop();
-    }
+    sendExtendTop()
 }
 
-function setError(error) {
+function handleError(error) {
     error = true;
     container.empty();
     container.append('<p class="error">' + error + '</p>');
@@ -89,65 +84,61 @@ function setError(error) {
 }
 
 function sendSetLine(line) {
-    ws.send("1|" + line);
+    ws.send(SET_LINE_COMMAND + "|" + line);
 }
 
 function sendExtendTop() {
-    ws.send("2");
+    if (extendProcessed) {
+        extendProcessed = false;
+        ws.send(EXTEND_TOP_COMMAND);
+    }
 }
 
 function sendExtendBottom() {
-    ws.send("3");
-}
-
-function sendRemoveTop() {
-    if (linesLoaded() < 100) {
-        return
+    if (extendProcessed) {
+        extendProcessed = false;
+        ws.send(EXTEND_BOTTOM_COMMAND);
     }
-    ws.send("4");
-}
-
-function sendRemoveBottom() {
-    if (linesLoaded() < 100) {
-        return
-    }
-    ws.send("5");
 }
 
 function handler(message) {
     console.log(message);
 
     let parts = message.split('|');
+    let data = "";
     switch (parts[0]) {
-        case "1":
-        case "3":
-            if (parts[1] === "0") { // no new lines no append
-                break
-            }
-            appendLine(parts[1] + ") " + parts[2]);
-            break;
-        case "2":
-            if (parts[1] === "0") { // no new lines no prepend
-                break
-            }
-            prependLine(parts[1] + ") " + parts[2]);
-            break;
-        case "4":
-            if (parts[1] === "true") {
-                removeTop()
-            }
-            break;
-        case "5":
-            if (parts[1] === "true") {
+        case EXTEND_TOP_COMMAND :
+            for (let i = 0; i < parts[1]; i++) {
                 removeBottom()
             }
+            if (parts[2] !== "0") {
+                for (let i = 3; i < parts.length; i += 2) {
+                    data += makeLine(parts[i] + ") " + parts[i + 1]);
+                }
+                prependData(data);
+            }
+            extendProcessed = true;
             break;
-        case "6":
-            // TODO: scroll to bottom
-            appendLine(parts[1] + ") " + parts[2]);
+        case EXTEND_BOTTOM_COMMAND:
+            for (let i = 0; i < parts[1]; i++) {
+                removeTop()
+            }
+            if (parts[2] !== "0") {
+                for (let i = 3; i < parts.length; i += 2) {
+                    data += makeLine(parts[i] + ") " + parts[i + 1]);
+                }
+                appendData(data);
+            }
+            extendProcessed = true;
             break;
-        case "7":
-            setError(parts[1]);
+        case SERVER_APPEND_COMMAND:
+            // TODO: scroll to bottom and command
             break;
+        case ERROR_COMMAND:
+            handleError(parts[1]);
+            break;
+        default:
+            handleError("Unexpected response from the server");
+            break
     }
 }
