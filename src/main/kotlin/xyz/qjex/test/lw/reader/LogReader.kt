@@ -13,7 +13,7 @@ import kotlin.math.min
 
 private const val BLOCK_LIMIT = 256
 private const val BUFFER_SIZE = 4 * 1024
-private const val SMALL_BUFFER_SIZE = 1024
+private const val SMALL_BUFFER_SIZE = BUFFER_SIZE
 
 class LogReader(file: Path) : Closeable {
 
@@ -58,16 +58,11 @@ class LogReader(file: Path) : Closeable {
         }
         var prevLineStart = findPrevLineStart(block.start)
         var prevLine = block.parts.first().line
-        while (prevLineStart > 0 && block.start - prevLineStart < SMALL_BUFFER_SIZE) {
-            if (prevLineStart == block.start) { // block starts with new line
-                prevLineStart = findPrevLineStart(prevLineStart - 1)
-                prevLine--
-            } else {
-                prevLine--
-                prevLineStart = findPrevLineStart(prevLineStart - 1)
-            }
-        }
 
+        if (prevLineStart == block.start) { // block starts with new line
+            prevLineStart = findPrevLineStart(prevLineStart - 1)
+            prevLine--
+        }
 
         var prevBlock = createBlock(prevLineStart, prevLine, min(SMALL_BUFFER_SIZE, (block.start - prevLineStart).toInt()))
 

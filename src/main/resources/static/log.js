@@ -1,5 +1,6 @@
 let ws;
 let container;
+let table;
 let error = false;
 
 const SET_LINE_COMMAND = "1";
@@ -7,12 +8,12 @@ const EXTEND_TOP_COMMAND = "2";
 const EXTEND_BOTTOM_COMMAND = "3";
 const SERVER_APPEND_COMMAND = "4";
 const ERROR_COMMAND = "5";
-let extendProcessed = true;
-
-// TODO add command constants
+let extendTopProcessed = true;
+let extendBottomProcessed = true;
 
 function init(fileName, line) {
     container = $("#container");
+    table = $("#container table");
     let query = 'http://' + location.host + '/view?fileName=' + fileName;
     ws = new SockJS(query);
     ws.onmessage = function (data) {
@@ -55,25 +56,25 @@ function removeBottom() {
     lastLine.remove();
 }
 
-function makeLine(line) {
-    return '<p class="log_line" >' + line + '</p>'
+function makeLine(line, data) {
+    return '<tr class="log_line"> <td class="line_num">' + line + '</td><td>' + data + '</td></tr>'
 }
 
 function prependData(data) {
     let firstLine = $(".log_line:first");
     let curOffset = container.scrollTop() - firstLine.offset().top;
-    container.prepend(data);
+    table.prepend(data);
     container.scrollTop(firstLine.offset().top + curOffset);
 }
 
 function appendData(data) {
-    container.append(data);
+    table.append(data);
 }
 
 function setLine(line) {
-    container.empty();
+    table.empty();
     sendSetLine(line);
-    sendExtendTop()
+    handleScrollEvent();
 }
 
 function handleError(error) {
@@ -88,15 +89,15 @@ function sendSetLine(line) {
 }
 
 function sendExtendTop() {
-    if (extendProcessed) {
-        extendProcessed = false;
+    if (extendTopProcessed) {
+        extendTopProcessed = false;
         ws.send(EXTEND_TOP_COMMAND);
     }
 }
 
 function sendExtendBottom() {
-    if (extendProcessed) {
-        extendProcessed = false;
+    if (extendBottomProcessed) {
+        extendBottomProcessed = false;
         ws.send(EXTEND_BOTTOM_COMMAND);
     }
 }
@@ -105,31 +106,14 @@ function handler(message) {
     console.log(message);
 
     let parts = message.split('|');
-    let data = "";
     switch (parts[0]) {
         case EXTEND_TOP_COMMAND :
-            for (let i = 0; i < parts[1]; i++) {
-                removeBottom()
-            }
-            if (parts[2] !== "0") {
-                for (let i = 3; i < parts.length; i += 2) {
-                    data += makeLine(parts[i] + ") " + parts[i + 1]);
-                }
-                prependData(data);
-            }
-            extendProcessed = true;
+            processExtendCommand(removeBottom, prependData, parts);
+            extendTopProcessed = true;
             break;
         case EXTEND_BOTTOM_COMMAND:
-            for (let i = 0; i < parts[1]; i++) {
-                removeTop()
-            }
-            if (parts[2] !== "0") {
-                for (let i = 3; i < parts.length; i += 2) {
-                    data += makeLine(parts[i] + ") " + parts[i + 1]);
-                }
-                appendData(data);
-            }
-            extendProcessed = true;
+            processExtendCommand(removeTop, appendData, parts);
+            extendBottomProcessed = true;
             break;
         case SERVER_APPEND_COMMAND:
             // TODO: scroll to bottom and command
@@ -140,5 +124,18 @@ function handler(message) {
         default:
             handleError("Unexpected response from the server");
             break
+    }
+}
+
+function processExtendCommand(removeDataFunction, addDataFunction, parts) {
+    for (let i = 0; i < parts[1]; i++) {
+        removeDataFunction()
+    }
+    let data = "";
+    if (parts[2] !== "0") {
+        for (let i = 3; i < parts.length; i += 2) {
+            data += makeLine(parts[i], decodeURIComponent(parts[i + 1].replace(/\+/g, ' ')));
+        }
+        addDataFunction(data);
     }
 }

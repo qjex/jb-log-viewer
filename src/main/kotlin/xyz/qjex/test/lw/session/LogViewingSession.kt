@@ -5,7 +5,8 @@ import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
 import xyz.qjex.test.lw.reader.LogReader
 import xyz.qjex.test.lw.service.FilesService
-import java.lang.StringBuilder
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 import java.nio.file.Paths
 import java.util.*
 import java.util.concurrent.Executors
@@ -122,7 +123,8 @@ class LogViewingSession(
         val commandBuilder = StringBuilder()
         commandBuilder.append("$command|$toDelete|${block.parts.size}")
         for (part in block.parts) {
-            commandBuilder.append("|${part.line}|${part.data}")
+            val encodedData = URLEncoder.encode(part.data, StandardCharsets.UTF_8);
+            commandBuilder.append("|${part.line}|${encodedData}")
         }
         wsSession.sendMessage(TextMessage(commandBuilder.toString()))
     }
