@@ -11,9 +11,8 @@ import java.nio.file.StandardOpenOption
 import kotlin.math.max
 import kotlin.math.min
 
-private const val BLOCK_LIMIT = 256
+private const val PART_LIMIT = 256
 private const val BUFFER_SIZE = 4 * 1024
-private const val SMALL_BUFFER_SIZE = BUFFER_SIZE
 
 class LogReader(file: Path) : Closeable {
 
@@ -25,6 +24,8 @@ class LogReader(file: Path) : Closeable {
      * if [requestedLine] is bigger than the amount of lines in file,
      * the last line of the file is set as starting line for current session
      * [requestedLine] is 1-indexed
+     *
+     * @return block that starts on [requestedLine]
      */
     fun findBlockByLine(requestedLine: Int): Block {
         fileChannel.position(0)
@@ -53,9 +54,24 @@ class LogReader(file: Path) : Closeable {
         return createBlock(lastFullLineStart, currentLine)
     }
 
-    fun appendPossible(block: Block) = block.end + SMALL_BUFFER_SIZE >= fileChannel.size()
+    /**
+     * Verifies if there is less than [BUFFER_SIZE] bytes between file end and block's end.
+     * If such holds, new non empty block could be read after the given [block]
+     */
+    fun nextBottomBlockPossible(block: Block) = block.end + BUFFER_SIZE >= fileChannel.size()
 
-    // TODO rewrite method
+    /**
+     * Reads block that ends right before [block] start.
+     *
+     * Method finds first '\n' "anchor" in [BUFFER_SIZE] bytes before the [block].
+     * If there is no such "anchor" in this segment of bytes, the algorithms searches in [BUFFER_SIZE] bytes
+     * before that segment. This process stops when the "anchor" is found or the start of the file reached.
+     *
+     * Then the algorithm starts reading blocks after this "anchor".
+     * The last block before given [block] in this chain is returned.
+     *
+     * @return previous block or the same block with [NextBlock.moved] flag set to false
+     */
     fun nextTopBlock(block: Block): NextBlock {
         if (block.start == 0L) {
             return NextBlock(false, block)
@@ -92,7 +108,7 @@ class LogReader(file: Path) : Closeable {
             prevLeftBound = leftBound
         }
 
-        var prevBlock = createBlock(prevStart, prevLine, min(SMALL_BUFFER_SIZE, (block.start - prevStart).toInt()))
+        var prevBlock = createBlock(prevStart, prevLine, min(BUFFER_SIZE, (block.start - prevStart).toInt()))
 
         while (true) {
             if (prevBlock.end > block.start) {
@@ -101,15 +117,22 @@ class LogReader(file: Path) : Closeable {
             if (prevBlock.end == block.start) {
                 break
             }
-            val nextBlock = nextBottomBlock(prevBlock)
-            if (!nextBlock.moved) {
-                error("Consistency error: expected next block")
-            }
-            prevBlock = nextBlock.block
+            prevBlock = nextBottomBlock(prevBlock).block
         }
         return NextBlock(true, prevBlock)
     }
 
+    /**
+     * Reads next block after [block].
+     *
+     * The algorithm reads next [BUFFER_SIZE] bytes after [block].
+     * Then those bytes are splitted in the list of [Part].
+     * Each [Part] is either the entire line ending with '\n' or the string containing [PART_LIMIT] bytes.
+     * If in the latter case ends with some not finished utf8 byte sequence,
+     * this sequence is trimmed and would go into the next [Part]
+     *
+     * @return next block or the same block with [NextBlock.moved] flag set to false
+     */
     fun nextBottomBlock(block: Block): NextBlock {
         val nextStart = block.end
         val lastLine = block.parts.lastOrNull()?.line ?: 1
@@ -123,7 +146,7 @@ class LogReader(file: Path) : Closeable {
         return NextBlock(true, nextBorder)
     }
 
-    private fun createBlock(startPosition: Long, startLine: Int, length: Int = SMALL_BUFFER_SIZE): Block {
+    private fun createBlock(startPosition: Long, startLine: Int, length: Int = BUFFER_SIZE): Block {
         val buffer = ByteBuffer.allocate(length)
         val read = fileChannel.read(buffer, startPosition)
         val processingResult = processBuffer(buffer, read, startLine)
@@ -153,7 +176,7 @@ class LogReader(file: Path) : Closeable {
                 currentLine++
                 currentStart = i + 1
             }
-            if (i - currentStart == BLOCK_LIMIT) {
+            if (i - currentStart == PART_LIMIT) {
                 parts += Part(currentLine, String(
                         buffer.array(),
                         currentStart,

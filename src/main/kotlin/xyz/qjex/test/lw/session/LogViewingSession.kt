@@ -54,7 +54,7 @@ class LogViewingSession(
             onError("File deleted")
             return@withLock
         }
-        if (logReader.appendPossible(loadedBlocks.last)) {
+        if (logReader.nextBottomBlockPossible(loadedBlocks.last)) {
             extendBottom()
         }
     }
