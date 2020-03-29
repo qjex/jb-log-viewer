@@ -26,10 +26,10 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     }
 
     @Bean
-    override fun userDetailsService(): UserDetailsService? {
+    override fun userDetailsService(): UserDetailsService {
         val user: UserDetails = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
+                .username("demo")
+                .password("demo")
                 .roles("USER")
                 .build()
         return InMemoryUserDetailsManager(user)
