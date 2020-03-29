@@ -15,16 +15,7 @@ repositories {
     mavenCentral()
 }
 
-
-val developmentOnly by configurations.creating
-configurations {
-    runtimeClasspath {
-        extendsFrom(developmentOnly)
-    }
-}
-
 dependencies {
-    //	implementation("org.springframework.boot:spring-boot-starter-data-rest")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-websocket")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -36,8 +27,6 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
     testImplementation("org.springframework.security:spring-security-test")
-
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 tasks.withType<Test> {
