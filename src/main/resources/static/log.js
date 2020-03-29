@@ -92,10 +92,11 @@ function setLine(line) {
     sendExtendTop();
 }
 
-function handleError(error) {
+function handleError(errorMsg) {
     error = true;
     container.empty();
-    container.append('<p class="error">' + error + '</p>');
+    container.append('<p class="error">' + errorMsg + '</p>');
+    container[0].scrollTop = 0;
     ws.close();
 }
 

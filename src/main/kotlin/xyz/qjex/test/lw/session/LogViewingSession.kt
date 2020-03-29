@@ -3,8 +3,10 @@ package xyz.qjex.test.lw.session
 import org.slf4j.LoggerFactory
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
+import xyz.qjex.test.lw.exception.FileDeletedException
 import xyz.qjex.test.lw.reader.LogReader
 import xyz.qjex.test.lw.service.FilesService
+import java.io.IOException
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 import java.util.*
@@ -52,13 +54,23 @@ class LogViewingSession(
         val scanner = Scanner(request).also {
             it.useDelimiter("\\|")
         }
-        when (scanner.next()) {
-            EXTEND_BOTTOM_COMMAND -> extendBottom()
-            EXTEND_TOP_COMMAND -> extendTop()
-            SET_LINE_COMMAND -> {
-                val line = scanner.nextInt()
-                setLine(line)
+        try {
+            when (scanner.next()) {
+                EXTEND_BOTTOM_COMMAND -> extendBottom()
+                EXTEND_TOP_COMMAND -> extendTop()
+                SET_LINE_COMMAND -> {
+                    val line = scanner.nextInt()
+                    setLine(line)
+                }
             }
+        } catch (e: FileDeletedException) {
+            sendError("File deleted")
+        } catch (e: IOException) {
+            LOGGER.debug("Error reading file on request $request:", e)
+            sendError("Error reading file")
+        } catch (e: Exception) {
+            LOGGER.warn("Internal error on request $request:", e)
+            sendError("Internal error")
         }
     }
 
@@ -112,6 +124,7 @@ class LogViewingSession(
 
     private fun sendError(errorMessage: String) {
         wsSession.sendMessage(TextMessage("$ERROR_COMMAND|$errorMessage"))
+        close()
     }
 
     private fun sendExtendResponse(command: String, toDelete: Int = 0, block: Block = Block(0, 0, emptyList())) {
