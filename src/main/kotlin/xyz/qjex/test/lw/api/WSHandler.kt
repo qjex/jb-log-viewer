@@ -30,6 +30,6 @@ class WSHandler(
     }
 
     override fun afterConnectionClosed(session: WebSocketSession, status: CloseStatus) {
-        (session.attributes[SESSION] as LogViewingSession).close()
+        (session.attributes[SESSION] as LogViewingSession?)?.close()
     }
 }

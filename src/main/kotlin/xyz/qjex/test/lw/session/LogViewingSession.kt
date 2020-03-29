@@ -11,6 +11,7 @@ import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 import java.util.*
 import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledFuture
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
@@ -32,6 +33,7 @@ class LogViewingSession(
     private lateinit var logReader: LogReader
     private val sessionLock = ReentrantLock()
     private val scheduler = Executors.newScheduledThreadPool(1)
+    private val appendDataTask: ScheduledFuture<*>
     private val loadedBlocks: Deque<Block> = LinkedList()
     private var loadedParts = 0
 
@@ -41,7 +43,7 @@ class LogViewingSession(
         } else {
             wsSession.close()
         }
-        scheduler.scheduleWithFixedDelay({ appendData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
+        appendDataTask = scheduler.scheduleWithFixedDelay({ appendData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
     }
 
     private fun appendData() = sessionLock.withLock {
@@ -75,7 +77,9 @@ class LogViewingSession(
     }
 
     fun close() {
+        appendDataTask.cancel(false)
         logReader.close()
+        scheduler.shutdown()
     }
 
     private fun setLine(requestedLine: Int) {
