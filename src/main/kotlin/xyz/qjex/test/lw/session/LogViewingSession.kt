@@ -7,17 +7,18 @@ import xyz.qjex.test.lw.reader.LogReader
 import xyz.qjex.test.lw.service.FilesService
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
-import java.nio.file.Paths
 import java.util.*
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.locks.ReentrantLock
+import kotlin.concurrent.withLock
 
 private const val SET_LINE_COMMAND = "1"
 private const val EXTEND_TOP_COMMAND = "2"
 private const val EXTEND_BOTTOM_COMMAND = "3"
-private const val SERVER_APPEND_COMMAND = "4"
-private const val ERROR_COMMAND = "5"
+private const val ERROR_COMMAND = "4"
 
-private const val FOLLOWER_UPDATE_DELAY_MS = 1000
+private const val FOLLOWER_UPDATE_DELAY_MS = 1000L
 private const val MAX_LOADED_PARTS = 500
 private val LOGGER = LoggerFactory.getLogger(LogViewingSession::class.java)
 
@@ -27,6 +28,10 @@ class LogViewingSession(
         fileName: String?
 ) {
     private lateinit var logReader: LogReader
+    private val sessionLock = ReentrantLock()
+    private val scheduler = Executors.newScheduledThreadPool(1)
+    private val loadedBlocks: Deque<Block> = LinkedList()
+    private var loadedParts = 0
 
     init {
         if (validateFileName(fileName)) {
@@ -34,24 +39,32 @@ class LogViewingSession(
         } else {
             wsSession.close()
         }
+        scheduler.scheduleWithFixedDelay({ appendData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
     }
 
-    private fun validateFileName(fileName: String?): Boolean {
-        if (fileName == null) {
-            sendError("fileName not specified")
-            return false
+    private fun appendData() = sessionLock.withLock {
+        if (logReader.appendPossible(loadedBlocks.last)) {
+            extendBottom()
         }
-        if (!filesService.validFileName(fileName)) {
-            sendError("File not found")
-            return false
-        }
-        return true
     }
 
-    private val path = Paths.get(fileName)
-    private val scheduler = Executors.newScheduledThreadPool(1)
-    private val loadedBlocks: Deque<Block> = LinkedList()
-    private var loadedParts = 0
+    fun handle(request: String) = sessionLock.withLock {
+        val scanner = Scanner(request).also {
+            it.useDelimiter("\\|")
+        }
+        when (scanner.next()) {
+            EXTEND_BOTTOM_COMMAND -> extendBottom()
+            EXTEND_TOP_COMMAND -> extendTop()
+            SET_LINE_COMMAND -> {
+                val line = scanner.nextInt()
+                setLine(line)
+            }
+        }
+    }
+
+    fun close() {
+        logReader.close()
+    }
 
     private fun setLine(requestedLine: Int) {
         val block = logReader.findBlockByLine(requestedLine)
@@ -97,24 +110,6 @@ class LogViewingSession(
         return toDelete
     }
 
-    fun handle(request: String) {
-        val scanner = Scanner(request).also {
-            it.useDelimiter("\\|")
-        }
-        when (scanner.next()) {
-            EXTEND_BOTTOM_COMMAND -> extendBottom()
-            EXTEND_TOP_COMMAND -> extendTop()
-            SET_LINE_COMMAND -> {
-                val line = scanner.nextInt()
-                setLine(line)
-            }
-        }
-    }
-
-    fun close() {
-        logReader.close()
-    }
-
     private fun sendError(errorMessage: String) {
         wsSession.sendMessage(TextMessage("$ERROR_COMMAND|$errorMessage"))
     }
@@ -123,9 +118,21 @@ class LogViewingSession(
         val commandBuilder = StringBuilder()
         commandBuilder.append("$command|$toDelete|${block.parts.size}")
         for (part in block.parts) {
-            val encodedData = URLEncoder.encode(part.data, StandardCharsets.UTF_8);
+            val encodedData = URLEncoder.encode(part.data, StandardCharsets.UTF_8)
             commandBuilder.append("|${part.line}|${encodedData}")
         }
         wsSession.sendMessage(TextMessage(commandBuilder.toString()))
+    }
+
+    private fun validateFileName(fileName: String?): Boolean {
+        if (fileName == null) {
+            sendError("fileName not specified")
+            return false
+        }
+        if (!filesService.validFileName(fileName)) {
+            sendError("File not found")
+            return false
+        }
+        return true
     }
 }

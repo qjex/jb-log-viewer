@@ -23,10 +23,11 @@ class LogReader(file: Path) : Closeable {
     /**
      * Starts reading from [requestedLine] line
      * if [requestedLine] is bigger than the amount of lines in file,
-     * the last line is set as starting line for current session
+     * the last line of the file is set as starting line for current session
      * [requestedLine] is 1-indexed
      */
     fun findBlockByLine(requestedLine: Int): Block {
+        fileChannel.position(0)
         var currentLine = 0
         var bytesRead = 0L
         var lastFullLineStart = 0L
@@ -52,19 +53,45 @@ class LogReader(file: Path) : Closeable {
         return createBlock(lastFullLineStart, currentLine)
     }
 
+    fun appendPossible(block: Block) = block.end + SMALL_BUFFER_SIZE >= fileChannel.size()
+
     fun nextTopBlock(block: Block): NextBlock {
         if (block.start == 0L) {
             return NextBlock(false, block)
         }
-        var prevLineStart = findPrevLineStart(block.start)
         var prevLine = block.parts.first().line
-
-        if (prevLineStart == block.start) { // block starts with new line
-            prevLineStart = findPrevLineStart(prevLineStart - 1)
-            prevLine--
+        var prevLeftBound = block.start
+        var prevStart = 0L
+        while (prevLeftBound > 0) {
+            val leftBound = max(0, prevLeftBound - BUFFER_SIZE)
+            val capacity = if (leftBound + BUFFER_SIZE >= prevLeftBound) (prevLeftBound - leftBound).toInt() else BUFFER_SIZE
+            val buffer = ByteBuffer.allocate(capacity)
+            fileChannel.read(buffer, leftBound)
+            var firstNewLine = -1
+            if (leftBound != 0L) {
+                for (i in 0 until capacity) {
+                    if (buffer[i].toChar() == '\n') {
+                        firstNewLine = i
+                        break
+                    }
+                }
+            }
+            for (i in firstNewLine + 1 until capacity) {
+                if (buffer[i].toChar() == '\n') {
+                    prevLine--
+                }
+            }
+            if (leftBound + firstNewLine + 1 == prevLeftBound) {
+                prevLine--
+            }
+            if (firstNewLine != -1 && leftBound + firstNewLine + 1 != prevLeftBound) {
+                prevStart = leftBound + firstNewLine + 1
+                break
+            }
+            prevLeftBound = leftBound
         }
 
-        var prevBlock = createBlock(prevLineStart, prevLine, min(SMALL_BUFFER_SIZE, (block.start - prevLineStart).toInt()))
+        var prevBlock = createBlock(prevStart, prevLine, min(SMALL_BUFFER_SIZE, (block.start - prevStart).toInt()))
 
         while (true) {
             if (prevBlock.end > block.start) {
@@ -93,23 +120,6 @@ class LogReader(file: Path) : Closeable {
         }
 
         return NextBlock(true, nextBorder)
-    }
-
-    private fun findPrevLineStart(currentStart: Long): Long {
-        var prevLeftBound = currentStart
-        while (prevLeftBound > 0) {
-            val leftBound = max(0, prevLeftBound - BUFFER_SIZE)
-            val capacity = if (leftBound + BUFFER_SIZE >= prevLeftBound) (prevLeftBound - leftBound).toInt() else BUFFER_SIZE
-            val buffer = ByteBuffer.allocate(capacity)
-            fileChannel.read(buffer, leftBound)
-            for (i in capacity - 1 downTo 0) {
-                if (buffer[i].toChar() == '\n') {
-                    return leftBound + i + 1
-                }
-            }
-            prevLeftBound = leftBound
-        }
-        return 0
     }
 
     private fun createBlock(startPosition: Long, startLine: Int, length: Int = SMALL_BUFFER_SIZE): Block {
@@ -156,7 +166,6 @@ class LogReader(file: Path) : Closeable {
     }
 
     private fun isUtf8SequenceStart(b: Byte) = (b.toInt() and 0x80) == 0 || (b.toInt() and 0x40) != 0
-
 
     override fun close() {
         fileChannel.close()

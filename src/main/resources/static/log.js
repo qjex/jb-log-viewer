@@ -1,13 +1,13 @@
-let ws;
-let container;
-let table;
-let error = false;
-
 const SET_LINE_COMMAND = "1";
 const EXTEND_TOP_COMMAND = "2";
 const EXTEND_BOTTOM_COMMAND = "3";
-const SERVER_APPEND_COMMAND = "4";
-const ERROR_COMMAND = "5";
+const ERROR_COMMAND = "4";
+
+let ws;
+let container;
+let table;
+
+let error = false;
 let extendTopProcessed = true;
 let extendBottomProcessed = true;
 
@@ -114,9 +114,6 @@ function handler(message) {
         case EXTEND_BOTTOM_COMMAND:
             processExtendCommand(removeTop, appendData, parts);
             extendBottomProcessed = true;
-            break;
-        case SERVER_APPEND_COMMAND:
-            // TODO: scroll to bottom and command
             break;
         case ERROR_COMMAND:
             handleError(parts[1]);
