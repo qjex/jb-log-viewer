@@ -88,7 +88,8 @@ function appendData(data) {
 function setLine(line) {
     table.empty();
     sendSetLine(line);
-    handleScrollEvent();
+    sendExtendBottom();
+    sendExtendTop();
 }
 
 function handleError(error) {
