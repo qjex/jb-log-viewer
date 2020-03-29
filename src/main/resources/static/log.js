@@ -6,6 +6,7 @@ const ERROR_COMMAND = "4";
 let ws;
 let container;
 let table;
+let followMode = false;
 
 let error = false;
 let extendTopProcessed = true;
@@ -25,6 +26,16 @@ function init(fileName, line) {
         }
     };
     container.scroll(handleScrollEvent);
+
+    $('#follow').change(function () {
+        if (this.checked !== true) {
+            followMode = false;
+        } else {
+            container[0].scrollTop = container[0].scrollHeight;
+            followMode = true;
+        }
+    });
+
     if (line == null) {
         line = 1
     }
@@ -69,6 +80,9 @@ function prependData(data) {
 
 function appendData(data) {
     table.append(data);
+    if (followMode) {
+        container[0].scrollTop = container[0].scrollHeight;
+    }
 }
 
 function setLine(line) {

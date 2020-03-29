@@ -21,11 +21,15 @@
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
-<h1 th:if="${error} == null" th:text="${fileName}"></h1>
 <h1 th:if="${error} != null" th:inline="text">[[${fileName}]]: [[${error}]]</h1>
-<button th:if="${error} == null" onclick="setLine(0)" type="button">Last line</button>
-<div th:if="${error} == null" id="container">
-    <table id="log"></table>
+<div th:if="${error} == null">
+    <h1 th:text="${fileName}"></h1>
+    <button onclick="setLine(0)" type="button">Last line</button>
+    <input type="checkbox" id="follow" name="scales">
+    <label for="follow">Follow mode</label>
+    <div id="container">
+        <table id="log"></table>
+    </div>
 </div>
 </body>
 </html>
