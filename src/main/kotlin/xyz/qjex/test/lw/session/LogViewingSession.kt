@@ -3,12 +3,13 @@ package xyz.qjex.test.lw.session
 import org.slf4j.LoggerFactory
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
-import xyz.qjex.test.lw.exception.FileDeletedException
 import xyz.qjex.test.lw.reader.LogReader
 import xyz.qjex.test.lw.service.FilesService
 import java.io.IOException
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
+import java.nio.file.Files
+import java.nio.file.Path
 import java.util.*
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledFuture
@@ -31,22 +32,28 @@ class LogViewingSession(
         fileName: String?
 ) {
     private lateinit var logReader: LogReader
+    private lateinit var file: Path
+    private lateinit var pushDataTask: ScheduledFuture<*>
     private val sessionLock = ReentrantLock()
     private val scheduler = Executors.newScheduledThreadPool(1)
-    private val appendDataTask: ScheduledFuture<*>
     private val loadedBlocks: Deque<Block> = LinkedList()
     private var loadedParts = 0
 
     init {
         if (validateFileName(fileName)) {
-            logReader = LogReader(filesService.resolve(fileName!!))
+            file = filesService.resolve(fileName!!)
+            logReader = LogReader(file)
+            pushDataTask = scheduler.scheduleWithFixedDelay({ pushData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
         } else {
             wsSession.close()
         }
-        appendDataTask = scheduler.scheduleWithFixedDelay({ appendData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
     }
 
-    private fun appendData() = sessionLock.withLock {
+    private fun pushData() = sessionLock.withLock {
+        if (!Files.exists(file)) {
+            onError("File deleted")
+            return@withLock
+        }
         if (logReader.appendPossible(loadedBlocks.last)) {
             extendBottom()
         }
@@ -65,21 +72,20 @@ class LogViewingSession(
                     setLine(line)
                 }
             }
-        } catch (e: FileDeletedException) {
-            sendError("File deleted")
         } catch (e: IOException) {
             LOGGER.debug("Error reading file on request $request:", e)
-            sendError("Error reading file")
+            onError("Error reading file")
         } catch (e: Exception) {
             LOGGER.warn("Internal error on request $request:", e)
-            sendError("Internal error")
+            onError("Internal error")
         }
     }
 
     fun close() {
-        appendDataTask.cancel(false)
+        pushDataTask.cancel(false)
         logReader.close()
         scheduler.shutdown()
+        wsSession.close()
     }
 
     private fun setLine(requestedLine: Int) {
@@ -126,7 +132,7 @@ class LogViewingSession(
         return toDelete
     }
 
-    private fun sendError(errorMessage: String) {
+    private fun onError(errorMessage: String) {
         wsSession.sendMessage(TextMessage("$ERROR_COMMAND|$errorMessage"))
         close()
     }
@@ -143,11 +149,11 @@ class LogViewingSession(
 
     private fun validateFileName(fileName: String?): Boolean {
         if (fileName == null) {
-            sendError("fileName not specified")
+            onError("fileName not specified")
             return false
         }
         if (!filesService.validFileName(fileName)) {
-            sendError("File not found")
+            onError("File not found")
             return false
         }
         return true

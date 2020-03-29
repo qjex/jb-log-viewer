@@ -1,13 +1,11 @@
 package xyz.qjex.test.lw.reader
 
-import xyz.qjex.test.lw.exception.FileDeletedException
 import xyz.qjex.test.lw.session.Block
 import xyz.qjex.test.lw.session.Part
 import java.io.Closeable
 import java.nio.ByteBuffer
 import java.nio.channels.FileChannel
 import java.nio.charset.StandardCharsets
-import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 import kotlin.math.max
@@ -17,7 +15,7 @@ private const val BLOCK_LIMIT = 256
 private const val BUFFER_SIZE = 4 * 1024
 private const val SMALL_BUFFER_SIZE = BUFFER_SIZE
 
-class LogReader(private val file: Path) : Closeable {
+class LogReader(file: Path) : Closeable {
 
     private val fileChannel: FileChannel = FileChannel.open(file, StandardOpenOption.READ)
     private val bufferArray = ByteArray(BUFFER_SIZE)
@@ -35,9 +33,6 @@ class LogReader(private val file: Path) : Closeable {
         var lastFullLineStart = 0L
         var currentLineStart = 0L
         readingLoop@ while (true) {
-            if (!Files.exists(file)) {
-                throw FileDeletedException()
-            }
             val buffer = ByteBuffer.wrap(bufferArray)
             val currentRead = fileChannel.read(buffer)
             if (currentRead <= 0) {
@@ -69,9 +64,6 @@ class LogReader(private val file: Path) : Closeable {
         var prevLeftBound = block.start
         var prevStart = 0L
         while (prevLeftBound > 0) {
-            if (!Files.exists(file)) {
-                throw FileDeletedException()
-            }
             val leftBound = max(0, prevLeftBound - BUFFER_SIZE)
             val capacity = if (leftBound + BUFFER_SIZE >= prevLeftBound) (prevLeftBound - leftBound).toInt() else BUFFER_SIZE
             val buffer = ByteBuffer.allocate(capacity)
@@ -133,9 +125,6 @@ class LogReader(private val file: Path) : Closeable {
 
     private fun createBlock(startPosition: Long, startLine: Int, length: Int = SMALL_BUFFER_SIZE): Block {
         val buffer = ByteBuffer.allocate(length)
-        if (!Files.exists(file)) {
-            throw FileDeletedException()
-        }
         val read = fileChannel.read(buffer, startPosition)
         val processingResult = processBuffer(buffer, read, startLine)
         return Block(startPosition, processingResult.first, processingResult.second)
