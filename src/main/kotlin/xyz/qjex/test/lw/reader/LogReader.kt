@@ -76,53 +76,67 @@ class LogReader(file: Path) : Closeable {
         if (block.start == 0L) {
             return NextBlock(false, block)
         }
+
         var prevLine = block.parts.first().line
-        var prevLeftBound = block.start
-        var prevStart = 0L
-        while (prevLeftBound > 0) {
-            val leftBound = max(0, prevLeftBound - BUFFER_SIZE)
-            val capacity = if (leftBound + BUFFER_SIZE >= prevLeftBound) (prevLeftBound - leftBound).toInt() else BUFFER_SIZE
+        var leftBound = block.start
+        var blockChainStart = 0L
+        while (leftBound > 0) {
+            val currentLeftBound = max(0, leftBound - BUFFER_SIZE)
+            val capacity = if (currentLeftBound + BUFFER_SIZE >= leftBound) (leftBound - currentLeftBound).toInt() else BUFFER_SIZE
             val buffer = ByteBuffer.allocate(capacity)
-            fileChannel.read(buffer, leftBound)
-            var firstNewLine = -1
-            if (leftBound != 0L) {
+            fileChannel.read(buffer, currentLeftBound)
+
+            var anchorBufferPosition = -1
+            if (currentLeftBound != 0L) {
                 for (i in 0 until capacity) {
                     if (buffer[i].toChar() == '\n') {
-                        firstNewLine = i
+                        anchorBufferPosition = i
                         break
                     }
                 }
             }
-            for (i in firstNewLine + 1 until capacity) {
-                if (buffer[i].toChar() == '\n') {
+            for (i in anchorBufferPosition + 1 until capacity) {
+                if (buffer[i].toChar() == '\n') { // counting new lines between "anchor" and current top block
                     prevLine--
                 }
             }
-            if (leftBound + firstNewLine + 1 == prevLeftBound) {
+            val anchorPosition = currentLeftBound + anchorBufferPosition + 1
+            val isLastPartOfLine = anchorPosition == leftBound
+            if (isLastPartOfLine) { // counting line if the next block start with new line
                 prevLine--
             }
-            if (firstNewLine != -1 && leftBound + firstNewLine + 1 != prevLeftBound) {
-                prevStart = leftBound + firstNewLine + 1
+            if (anchorBufferPosition != -1 && !isLastPartOfLine) { // found "anchor" and the next block is not the current one at the top
+                blockChainStart = anchorPosition
                 break
             }
-            prevLeftBound = leftBound
+            leftBound = currentLeftBound
         }
 
-        var curBlock = createBlock(prevStart, prevLine, min(BUFFER_SIZE, (block.start - prevStart).toInt()), true)
-
+        var currentBlockInChain = createBlock(
+                blockChainStart,
+                prevLine,
+                min(BUFFER_SIZE, (block.start - blockChainStart).toInt()),
+                true
+        )
+        // going down the chain
         while (true) {
-            if (curBlock.end > block.start) {
-                error("Consistency error: ${curBlock.start} ${curBlock.end} ${block.start}")
+            if (currentBlockInChain.end > block.start) {
+                error("Consistency error: ${currentBlockInChain.start} ${currentBlockInChain.end} ${block.start}")
             }
-            if (curBlock.end == block.start) {
+            if (currentBlockInChain.end == block.start) {
                 break
             }
-            val nextStart = curBlock.end
-            val lastLine = curBlock.parts.lastOrNull()?.line ?: 1
-            val nextStartLine = if (curBlock.parts.lastOrNull()?.containsNewLine == true) lastLine + 1 else lastLine
-            curBlock = createBlock(nextStart, nextStartLine, min(BUFFER_SIZE, (block.start - nextStart).toInt()), true)
+            val nextBlockInChainStart = currentBlockInChain.end
+            val lastLineInChain = currentBlockInChain.parts.lastOrNull()?.line ?: 1
+            val nextLineInChain = if (currentBlockInChain.parts.lastOrNull()?.containsNewLine == true) lastLineInChain + 1 else lastLineInChain
+            currentBlockInChain = createBlock(
+                    nextBlockInChainStart,
+                    nextLineInChain,
+                    min(BUFFER_SIZE, (block.start - nextBlockInChainStart).toInt()),
+                    true
+            )
         }
-        return NextBlock(true, curBlock)
+        return NextBlock(true, currentBlockInChain)
     }
 
     /**
@@ -149,14 +163,24 @@ class LogReader(file: Path) : Closeable {
         return NextBlock(true, nextBlock)
     }
 
-    private fun createBlock(startPosition: Long, startLine: Int, length: Int = BUFFER_SIZE, allowNonFullTailPart: Boolean = false): Block {
+    private fun createBlock(
+            startPosition: Long,
+            startLine: Int,
+            length: Int = BUFFER_SIZE,
+            allowNonFullTailPart: Boolean = false
+    ): Block {
         val buffer = ByteBuffer.allocate(length)
         val read = fileChannel.read(buffer, startPosition)
         val processingResult = processBuffer(buffer, read, startLine, allowNonFullTailPart)
         return Block(startPosition, processingResult.first, processingResult.second)
     }
 
-    private fun processBuffer(buffer: ByteBuffer, read: Int, startLine: Int, allowNonFullTailPart: Boolean): Pair<Int, List<Part>> {
+    private fun processBuffer(
+            buffer: ByteBuffer,
+            read: Int,
+            startLine: Int,
+            allowNonFullTailPart: Boolean
+    ): Pair<Int, List<Part>> {
         if (read <= 0) {
             return Pair(0, listOf())
         }
@@ -170,31 +194,16 @@ class LogReader(file: Path) : Closeable {
                 lastUtf8SequenceStart = i
             }
             if (b.toChar() == '\n') {
-                parts += Part(currentLine, String(
-                        buffer.array(),
-                        currentStart,
-                        i - currentStart + 1,
-                        StandardCharsets.UTF_8
-                ), true)
+                parts += buffer.extractPart(currentStart, i - currentStart + 1, currentLine, true)
                 currentLine++
                 currentStart = i + 1
             } else if (i - currentStart == PART_LIMIT) {
-                parts += Part(currentLine, String(
-                        buffer.array(),
-                        currentStart,
-                        lastUtf8SequenceStart - currentStart,
-                        StandardCharsets.UTF_8
-                ), false)
+                parts += buffer.extractPart(currentStart, lastUtf8SequenceStart - currentStart, currentLine, false)
                 currentStart = lastUtf8SequenceStart
             }
         }
         if (currentStart != read && allowNonFullTailPart) {
-            parts += Part(currentLine, String(
-                    buffer.array(),
-                    currentStart,
-                    read - currentStart,
-                    StandardCharsets.UTF_8
-            ), false)
+            parts += buffer.extractPart(currentStart, read - currentStart, currentLine, false)
             currentStart = read
         }
         return Pair(currentStart, parts)
@@ -211,3 +220,15 @@ data class NextBlock(
         val moved: Boolean,
         val block: Block
 )
+
+private fun ByteBuffer.extractPart(start: Int, length: Int, line: Int, containsNewLine: Boolean) =
+        Part(
+                line,
+                String(
+                        this.array(),
+                        start,
+                        length,
+                        StandardCharsets.UTF_8
+                ),
+                containsNewLine
+        )

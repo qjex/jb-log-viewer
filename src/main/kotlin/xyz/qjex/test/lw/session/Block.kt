@@ -1,5 +1,8 @@
 package xyz.qjex.test.lw.session
 
+import java.nio.ByteBuffer
+import java.nio.charset.StandardCharsets
+
 data class Block(
         val start: Long,
         val length: Int,
