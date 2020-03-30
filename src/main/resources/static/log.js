@@ -14,16 +14,14 @@ let extendBottomProcessed = true;
 
 function init(fileName, line) {
     container = $("#container");
+    if (container.length === 0) {
+        return
+    }
     table = $("#container table");
     let query = 'http://' + location.host + '/view?fileName=' + fileName;
     ws = new SockJS(query);
     ws.onmessage = function (data) {
         handler(data.data);
-    };
-    ws.onclose = function () {
-        if (!error) {
-            // setTimeout(init, 5000, fileName, line)
-        }
     };
     container.scroll(handleScrollEvent);
 

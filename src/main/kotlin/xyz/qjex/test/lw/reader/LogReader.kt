@@ -56,9 +56,9 @@ class LogReader(file: Path) : Closeable {
 
     /**
      * Verifies if there is less than [BUFFER_SIZE] bytes between file end and block's end.
-     * If such holds, new non empty block could be read after the given [block]
+     * If such holds, new non empty block could be read after the given [block] and the file end would be reached
      */
-    fun nextBottomBlockPossible(block: Block) = block.end + BUFFER_SIZE >= fileChannel.size()
+    fun fileEndReachable(block: Block) = block.end + BUFFER_SIZE >= fileChannel.size()
 
     /**
      * Reads block that ends right before [block] start.
@@ -108,18 +108,21 @@ class LogReader(file: Path) : Closeable {
             prevLeftBound = leftBound
         }
 
-        var prevBlock = createBlock(prevStart, prevLine, min(BUFFER_SIZE, (block.start - prevStart).toInt()))
+        var curBlock = createBlock(prevStart, prevLine, min(BUFFER_SIZE, (block.start - prevStart).toInt()), true)
 
         while (true) {
-            if (prevBlock.end > block.start) {
-                error("Consistency error: ${prevBlock.start} ${prevBlock.end} ${block.start}")
+            if (curBlock.end > block.start) {
+                error("Consistency error: ${curBlock.start} ${curBlock.end} ${block.start}")
             }
-            if (prevBlock.end == block.start) {
+            if (curBlock.end == block.start) {
                 break
             }
-            prevBlock = nextBottomBlock(prevBlock).block
+            val nextStart = curBlock.end
+            val lastLine = curBlock.parts.lastOrNull()?.line ?: 1
+            val nextStartLine = if (curBlock.parts.lastOrNull()?.containsNewLine == true) lastLine + 1 else lastLine
+            curBlock = createBlock(nextStart, nextStartLine, min(BUFFER_SIZE, (block.start - nextStart).toInt()), true)
         }
-        return NextBlock(true, prevBlock)
+        return NextBlock(true, curBlock)
     }
 
     /**
@@ -137,23 +140,23 @@ class LogReader(file: Path) : Closeable {
         val nextStart = block.end
         val lastLine = block.parts.lastOrNull()?.line ?: 1
         val nextStartLine = if (block.parts.lastOrNull()?.containsNewLine == true) lastLine + 1 else lastLine
-        val nextBorder = createBlock(nextStart, nextStartLine)
+        val nextBlock = createBlock(nextStart, nextStartLine)
 
-        if (nextBorder.parts.isEmpty()) {
+        if (nextBlock.parts.isEmpty()) {
             return NextBlock(false, block)
         }
 
-        return NextBlock(true, nextBorder)
+        return NextBlock(true, nextBlock)
     }
 
-    private fun createBlock(startPosition: Long, startLine: Int, length: Int = BUFFER_SIZE): Block {
+    private fun createBlock(startPosition: Long, startLine: Int, length: Int = BUFFER_SIZE, allowNonFullTailPart: Boolean = false): Block {
         val buffer = ByteBuffer.allocate(length)
         val read = fileChannel.read(buffer, startPosition)
-        val processingResult = processBuffer(buffer, read, startLine)
+        val processingResult = processBuffer(buffer, read, startLine, allowNonFullTailPart)
         return Block(startPosition, processingResult.first, processingResult.second)
     }
 
-    private fun processBuffer(buffer: ByteBuffer, read: Int, startLine: Int): Pair<Int, List<Part>> {
+    private fun processBuffer(buffer: ByteBuffer, read: Int, startLine: Int, allowNonFullTailPart: Boolean): Pair<Int, List<Part>> {
         if (read <= 0) {
             return Pair(0, listOf())
         }
@@ -175,8 +178,7 @@ class LogReader(file: Path) : Closeable {
                 ), true)
                 currentLine++
                 currentStart = i + 1
-            }
-            if (i - currentStart == PART_LIMIT) {
+            } else if (i - currentStart == PART_LIMIT) {
                 parts += Part(currentLine, String(
                         buffer.array(),
                         currentStart,
@@ -185,6 +187,15 @@ class LogReader(file: Path) : Closeable {
                 ), false)
                 currentStart = lastUtf8SequenceStart
             }
+        }
+        if (currentStart != read && allowNonFullTailPart) {
+            parts += Part(currentLine, String(
+                    buffer.array(),
+                    currentStart,
+                    read - currentStart,
+                    StandardCharsets.UTF_8
+            ), false)
+            currentStart = read
         }
         return Pair(currentStart, parts)
     }

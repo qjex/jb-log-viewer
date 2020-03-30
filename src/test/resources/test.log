@@ -1,0 +1,1043 @@
+Mar 30 00:00:17 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7788 , mProcessID:  79144 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:06:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:08:28 Ffff-MacBook-Pro obs[75575]: BUG in libdispatch client: mach_recv, monitored resource vanished before the source cancel handler was invoked { 0x6000030fb000[source], ident: 61187 / 0xef03, handler: 0x7fff6a6ead59 }
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7400 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # RemClient #  success , mClientID:  7401 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7651 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7652 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:09:07 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:09:37 --- last message repeated 1 time ---
+Mar 30 00:09:56 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.mediaanalysisd): Service only ran for 5 seconds. Pushing respawn out by 5 seconds.
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:13:23 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e810f73,0xde6d7}) == 0
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80596]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80597]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80598]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80599]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80600]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80601]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80602]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10ef8b1f8). One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x1123ca938). One of the two will be used. Which one is undefined.
+Mar 30 00:16:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:16:43 --- last message repeated 1 time ---
+Mar 30 00:16:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:20:00 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:20:30 --- last message repeated 1 time ---
+Mar 30 00:27:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80757]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80758]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80759]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80760]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80761]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80762]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80763]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7474 , mProcessID:  75648 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.cdscheduler" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.install" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.callhistory.asl.conf" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.eventmonitor" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mail" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.performance" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.iokit.power" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.AddressBookLegacy" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.MessageTracer" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:37:06 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:47:10 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:49:35 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:50:05 --- last message repeated 1 time ---
+Mar 30 01:25:07 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81055]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81056]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81057]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81058]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81059]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81060]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81061]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:35:51 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:18:49 Ffff-MacBook-Pro xpcproxy[81825]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 03:18:49 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:35:03 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.bsd.dirhelper[81934]): Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.bsd.dirhelper
+Mar 30 03:35:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:52:00 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:03:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:03:19 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:51:18 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:58:59 Ffff-MacBook-Pro Tunnelblick[1032]: Sparkle: Verified appcast signature
+Mar 30 07:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:20:04 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:48:48 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:58:55 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818b9d,0x9e6c2}) == 0
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10a37b1f8). One of the two will be used. Which one is undefined.
+Mar 30 09:03:27 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10d7b8938). One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:04:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 09:04:24 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 3 seconds. Pushing respawn out by 7 seconds.
+Mar 30 09:04:55 Ffff-MacBook-Pro xpcproxy[84215]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:07 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818c8b,0xb6ecf}) == 0
+Mar 30 09:07:09 Ffff-MacBook-Pro xpcproxy[84228]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84229]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84230]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84231]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84232]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84233]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84234]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84242]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84243]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84244]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84245]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84246]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84247]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84248]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1067231f8). One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x109b46938). One of the two will be used. Which one is undefined.
+Mar 30 09:51:39 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:02:23 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:13:12 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:15:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7882 , mProcessID:  84805 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:18:42 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e819d52,0x78136}) == 0
+Mar 30 10:19:30 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:20:14 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.AddressBook.abd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 10:23:52 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:32:50 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:33:53 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:33:58 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7903 , mProcessID:  85034 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.WebKit.WebContent.C16D9ECB-CC0F-4CB4-9DBF-BF47B0EB9A3A[85104]): Service exited with abnormal code: 1
+Mar 30 10:44:08 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:48:05 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 10:48:35 --- last message repeated 1 time ---
+
+│  └─ group(*)
+│     └─ source(*) -> qwewqe
+│  └─ group(*)
+│     └─ source(*) -> qeweqw
+│  └─ group(*)
+│     └─ source(*) -> eqweqweqweqweqw
+Mar 30 11:02:24 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1062361f8). One of the two will be used. Which one is undefined.
+Mar 30 11:07:15 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10966c938). One of the two will be used. Which one is undefined.
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:00 Ffff-MacBook-Pro AccountProfileRemoteViewService[85470]: objc[85470]: Class AOSUISpyglassAccountChangeHelper is implemented in both /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI and /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/XPCServices/AccountProfileRemoteViewService.xpc/Contents/MacOS/AccountProfileRemoteViewService. One of the two will be used. Which one is undefined.
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:13:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:13:09 Ffff-MacBook-Pro login[85509]: USER_PROCESS: 85509 ttys013
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 00:00:17 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7788 , mProcessID:  79144 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:06:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:08:28 Ffff-MacBook-Pro obs[75575]: BUG in libdispatch client: mach_recv, monitored resource vanished before the source cancel handler was invoked { 0x6000030fb000[source], ident: 61187 / 0xef03, handler: 0x7fff6a6ead59 }
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7400 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # RemClient #  success , mClientID:  7401 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7651 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7652 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:09:07 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:09:37 --- last message repeated 1 time ---
+Mar 30 00:09:56 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.mediaanalysisd): Service only ran for 5 seconds. Pushing respawn out by 5 seconds.
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:13:23 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e810f73,0xde6d7}) == 0
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80596]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80597]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80598]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80599]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80600]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80601]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80602]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10ef8b1f8). One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x1123ca938). One of the two will be used. Which one is undefined.
+Mar 30 00:16:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:16:43 --- last message repeated 1 time ---
+Mar 30 00:16:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:20:00 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:20:30 --- last message repeated 1 time ---
+Mar 30 00:27:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80757]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80758]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80759]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80760]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80761]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80762]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80763]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7474 , mProcessID:  75648 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.cdscheduler" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.install" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.callhistory.asl.conf" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.eventmonitor" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mail" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.performance" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.iokit.power" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.AddressBookLegacy" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.MessageTracer" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:37:06 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:47:10 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:49:35 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:50:05 --- last message repeated 1 time ---
+Mar 30 01:25:07 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81055]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81056]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81057]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81058]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81059]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81060]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81061]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:35:51 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:18:49 Ffff-MacBook-Pro xpcproxy[81825]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 03:18:49 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:35:03 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.bsd.dirhelper[81934]): Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.bsd.dirhelper
+Mar 30 03:35:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:52:00 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:03:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:03:19 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:51:18 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:58:59 Ffff-MacBook-Pro Tunnelblick[1032]: Sparkle: Verified appcast signature
+Mar 30 07:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:20:04 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:48:48 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:58:55 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818b9d,0x9e6c2}) == 0
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10a37b1f8). One of the two will be used. Which one is undefined.
+Mar 30 09:03:27 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10d7b8938). One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:04:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 09:04:24 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 3 seconds. Pushing respawn out by 7 seconds.
+Mar 30 09:04:55 Ffff-MacBook-Pro xpcproxy[84215]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:07 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818c8b,0xb6ecf}) == 0
+Mar 30 09:07:09 Ffff-MacBook-Pro xpcproxy[84228]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84229]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84230]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84231]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84232]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84233]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84234]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84242]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84243]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84244]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84245]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84246]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84247]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84248]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1067231f8). One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x109b46938). One of the two will be used. Which one is undefined.
+Mar 30 09:51:39 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:02:23 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:13:12 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:15:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7882 , mProcessID:  84805 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:18:42 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e819d52,0x78136}) == 0
+Mar 30 10:19:30 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:20:14 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.AddressBook.abd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 10:23:52 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:32:50 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:33:53 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:33:58 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7903 , mProcessID:  85034 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.WebKit.WebContent.C16D9ECB-CC0F-4CB4-9DBF-BF47B0EB9A3A[85104]): Service exited with abnormal code: 1
+Mar 30 10:44:08 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:48:05 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 10:48:35 --- last message repeated 1 time ---
+
+│  └─ group(*)
+│     └─ source(*) -> qwewqe
+│  └─ group(*)
+│     └─ source(*) -> qeweqw
+│  └─ group(*)
+│     └─ source(*) -> eqweqweqweqweqw
+Mar 30 11:02:24 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1062361f8). One of the two will be used. Which one is undefined.
+Mar 30 11:07:15 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10966c938). One of the two will be used. Which one is undefined.
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:00 Ffff-MacBook-Pro AccountProfileRemoteViewService[85470]: objc[85470]: Class AOSUISpyglassAccountChangeHelper is implemented in both /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI and /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/XPCServices/AccountProfileRemoteViewService.xpc/Contents/MacOS/AccountProfileRemoteViewService. One of the two will be used. Which one is undefined.
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:13:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:13:09 Ffff-MacBook-Pro login[85509]: USER_PROCESS: 85509 ttys013
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 00:00:17 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7788 , mProcessID:  79144 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:06:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:08:28 Ffff-MacBook-Pro obs[75575]: BUG in libdispatch client: mach_recv, monitored resource vanished before the source cancel handler was invoked { 0x6000030fb000[source], ident: 61187 / 0xef03, handler: 0x7fff6a6ead59 }
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7400 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # RemClient #  success , mClientID:  7401 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7651 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7652 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:09:07 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:09:37 --- last message repeated 1 time ---
+Mar 30 00:09:56 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.mediaanalysisd): Service only ran for 5 seconds. Pushing respawn out by 5 seconds.
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:13:23 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e810f73,0xde6d7}) == 0
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80596]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80597]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80598]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80599]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80600]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80601]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80602]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10ef8b1f8). One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x1123ca938). One of the two will be used. Which one is undefined.
+Mar 30 00:16:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:16:43 --- last message repeated 1 time ---
+Mar 30 00:16:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:20:00 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:20:30 --- last message repeated 1 time ---
+Mar 30 00:27:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80757]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80758]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80759]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80760]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80761]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80762]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80763]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7474 , mProcessID:  75648 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.cdscheduler" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.install" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.callhistory.asl.conf" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.eventmonitor" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mail" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.performance" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.iokit.power" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.AddressBookLegacy" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.MessageTracer" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:37:06 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:47:10 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:49:35 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:50:05 --- last message repeated 1 time ---
+Mar 30 01:25:07 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81055]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81056]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81057]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81058]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81059]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81060]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81061]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:35:51 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:18:49 Ffff-MacBook-Pro xpcproxy[81825]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 03:18:49 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:35:03 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.bsd.dirhelper[81934]): Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.bsd.dirhelper
+Mar 30 03:35:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:52:00 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:03:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:03:19 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:51:18 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:58:59 Ffff-MacBook-Pro Tunnelblick[1032]: Sparkle: Verified appcast signature
+Mar 30 07:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:20:04 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:48:48 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:58:55 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818b9d,0x9e6c2}) == 0
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10a37b1f8). One of the two will be used. Which one is undefined.
+Mar 30 09:03:27 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10d7b8938). One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:04:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 09:04:24 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 3 seconds. Pushing respawn out by 7 seconds.
+Mar 30 09:04:55 Ffff-MacBook-Pro xpcproxy[84215]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:07 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818c8b,0xb6ecf}) == 0
+Mar 30 09:07:09 Ffff-MacBook-Pro xpcproxy[84228]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84229]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84230]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84231]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84232]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84233]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84234]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84242]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84243]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84244]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84245]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84246]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84247]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84248]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1067231f8). One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x109b46938). One of the two will be used. Which one is undefined.
+Mar 30 09:51:39 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:02:23 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:13:12 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:15:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7882 , mProcessID:  84805 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:18:42 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e819d52,0x78136}) == 0
+Mar 30 10:19:30 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:20:14 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.AddressBook.abd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 10:23:52 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:32:50 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:33:53 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:33:58 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7903 , mProcessID:  85034 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.WebKit.WebContent.C16D9ECB-CC0F-4CB4-9DBF-BF47B0EB9A3A[85104]): Service exited with abnormal code: 1
+Mar 30 10:44:08 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:48:05 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 10:48:35 --- last message repeated 1 time ---
+
+│  └─ group(*)
+│     └─ source(*) -> qwewqe
+│  └─ group(*)
+│     └─ source(*) -> qeweqw
+│  └─ group(*)
+│     └─ source(*) -> eqweqweqweqweqw
+Mar 30 11:02:24 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1062361f8). One of the two will be used. Which one is undefined.
+Mar 30 11:07:15 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10966c938). One of the two will be used. Which one is undefined.
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:00 Ffff-MacBook-Pro AccountProfileRemoteViewService[85470]: objc[85470]: Class AOSUISpyglassAccountChangeHelper is implemented in both /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI and /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/XPCServices/AccountProfileRemoteViewService.xpc/Contents/MacOS/AccountProfileRemoteViewService. One of the two will be used. Which one is undefined.
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:13:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:13:09 Ffff-MacBook-Pro login[85509]: USER_PROCESS: 85509 ttys013
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 00:00:17 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7788 , mProcessID:  79144 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:06:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:08:28 Ffff-MacBook-Pro obs[75575]: BUG in libdispatch client: mach_recv, monitored resource vanished before the source cancel handler was invoked { 0x6000030fb000[source], ident: 61187 / 0xef03, handler: 0x7fff6a6ead59 }
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7400 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # RemClient #  success , mClientID:  7401 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7651 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7652 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:09:07 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:09:37 --- last message repeated 1 time ---
+Mar 30 00:09:56 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.mediaanalysisd): Service only ran for 5 seconds. Pushing respawn out by 5 seconds.
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:13:23 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e810f73,0xde6d7}) == 0
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80596]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80597]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80598]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80599]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80600]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80601]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80602]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10ef8b1f8). One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x1123ca938). One of the two will be used. Which one is undefined.
+Mar 30 00:16:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:16:43 --- last message repeated 1 time ---
+Mar 30 00:16:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:20:00 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:20:30 --- last message repeated 1 time ---
+Mar 30 00:27:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80757]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80758]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80759]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80760]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80761]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80762]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80763]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7474 , mProcessID:  75648 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.cdscheduler" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.install" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.callhistory.asl.conf" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.eventmonitor" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mail" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.performance" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.iokit.power" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.AddressBookLegacy" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.MessageTracer" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:37:06 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:47:10 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:49:35 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:50:05 --- last message repeated 1 time ---
+Mar 30 01:25:07 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81055]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81056]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81057]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81058]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81059]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81060]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81061]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:35:51 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:18:49 Ffff-MacBook-Pro xpcproxy[81825]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 03:18:49 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:35:03 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.bsd.dirhelper[81934]): Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.bsd.dirhelper
+Mar 30 03:35:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:52:00 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:03:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:03:19 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:51:18 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:58:59 Ffff-MacBook-Pro Tunnelblick[1032]: Sparkle: Verified appcast signature
+Mar 30 07:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:20:04 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:48:48 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:58:55 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818b9d,0x9e6c2}) == 0
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10a37b1f8). One of the two will be used. Which one is undefined.
+Mar 30 09:03:27 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10d7b8938). One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:04:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 09:04:24 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 3 seconds. Pushing respawn out by 7 seconds.
+Mar 30 09:04:55 Ffff-MacBook-Pro xpcproxy[84215]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:07 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818c8b,0xb6ecf}) == 0
+Mar 30 09:07:09 Ffff-MacBook-Pro xpcproxy[84228]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84229]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84230]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84231]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84232]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84233]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84234]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84242]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84243]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84244]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84245]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84246]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84247]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84248]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1067231f8). One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x109b46938). One of the two will be used. Which one is undefined.
+Mar 30 09:51:39 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:02:23 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:13:12 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:15:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7882 , mProcessID:  84805 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:18:42 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e819d52,0x78136}) == 0
+Mar 30 10:19:30 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:20:14 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.AddressBook.abd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 10:23:52 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:32:50 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:33:53 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:33:58 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7903 , mProcessID:  85034 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.WebKit.WebContent.C16D9ECB-CC0F-4CB4-9DBF-BF47B0EB9A3A[85104]): Service exited with abnormal code: 1
+Mar 30 10:44:08 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:48:05 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 10:48:35 --- last message repeated 1 time ---
+
+│  └─ group(*)
+│     └─ source(*) -> qwewqe
+│  └─ group(*)
+│     └─ source(*) -> qeweqw
+│  └─ group(*)
+│     └─ source(*) -> eqweqweqweqweqw
+Mar 30 11:02:24 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1062361f8). One of the two will be used. Which one is undefined.
+Mar 30 11:07:15 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10966c938). One of the two will be used. Which one is undefined.
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:00 Ffff-MacBook-Pro AccountProfileRemoteViewService[85470]: objc[85470]: Class AOSUISpyglassAccountChangeHelper is implemented in both /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI and /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/XPCServices/AccountProfileRemoteViewService.xpc/Contents/MacOS/AccountProfileRemoteViewService. One of the two will be used. Which one is undefined.
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:13:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:13:09 Ffff-MacBook-Pro login[85509]: USER_PROCESS: 85509 ttys013
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 00:00:17 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7788 , mProcessID:  79144 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:06:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:08:28 Ffff-MacBook-Pro obs[75575]: BUG in libdispatch client: mach_recv, monitored resource vanished before the source cancel handler was invoked { 0x6000030fb000[source], ident: 61187 / 0xef03, handler: 0x7fff6a6ead59 }
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7400 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:29 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # RemClient #  success , mClientID:  7401 , mProcessID:  75575 , mIsNativeEndian:  1 , mBundleID:  com.obsproject.obs-studio
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7651 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:08:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7652 , mProcessID:  78072 , mIsNativeEndian:  1
+Mar 30 00:09:07 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:09:37 --- last message repeated 1 time ---
+Mar 30 00:09:56 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.mediaanalysisd): Service only ran for 5 seconds. Pushing respawn out by 5 seconds.
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:13:24 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:13:23 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e810f73,0xde6d7}) == 0
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80596]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80597]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80598]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80599]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80600]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80601]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:28 Ffff-MacBook-Pro xpcproxy[80602]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10ef8b1f8). One of the two will be used. Which one is undefined.
+Mar 30 00:13:29 Ffff-MacBook-Pro remindd[80603]: objc[80603]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x1123ca938). One of the two will be used. Which one is undefined.
+Mar 30 00:16:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:16:43 --- last message repeated 1 time ---
+Mar 30 00:16:44 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:20:00 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:20:30 --- last message repeated 1 time ---
+Mar 30 00:27:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 00:27:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80757]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80758]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80759]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80760]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80761]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80762]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:07 Ffff-MacBook-Pro xpcproxy[80763]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 00:27:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7474 , mProcessID:  75648 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.cdscheduler" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.install" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.callhistory.asl.conf" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.authd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.eventmonitor" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mail" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.performance" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.iokit.power" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.mkb" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.AddressBookLegacy" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.MessageTracer" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:30:00 Ffff-MacBook-Pro syslogd[108]: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Mar 30 00:37:06 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:47:10 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 00:49:35 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 00:50:05 --- last message repeated 1 time ---
+Mar 30 01:25:07 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+ǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄ
+next
+ǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄǄ
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81055]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81056]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81057]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81058]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81059]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81060]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:25:09 Ffff-MacBook-Pro xpcproxy[81061]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 01:35:51 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 01:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 02:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:16:47 Ffff-MacBook-Pro syncdefaultsd[81812]: objc[81812]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 03:18:49 Ffff-MacBook-Pro xpcproxy[81825]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 03:18:49 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:35:03 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.bsd.dirhelper[81934]): Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.bsd.dirhelper
+Mar 30 03:35:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 03:52:00 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 04:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:03:05 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 05:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:03:19 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:51:18 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 06:58:59 Ffff-MacBook-Pro Tunnelblick[1032]: Sparkle: Verified appcast signature
+Mar 30 07:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:20:04 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 07:52:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:07:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:22:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:37:56 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:48:48 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 08:58:55 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:03:09 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818b9d,0x9e6c2}) == 0
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:09 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:26 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x10a37b1f8). One of the two will be used. Which one is undefined.
+Mar 30 09:03:27 Ffff-MacBook-Pro remindd[84124]: objc[84124]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10d7b8938). One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:03:54 Ffff-MacBook-Pro syncdefaultsd[84135]: objc[84135]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 09:04:13 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 09:04:24 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.photoanalysisd): Service only ran for 3 seconds. Pushing respawn out by 7 seconds.
+Mar 30 09:04:55 Ffff-MacBook-Pro xpcproxy[84215]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7797 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:06 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7798 , mProcessID:  84099 , mIsNativeEndian:  1
+Mar 30 09:07:07 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e818c8b,0xb6ecf}) == 0
+Mar 30 09:07:09 Ffff-MacBook-Pro xpcproxy[84228]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84229]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84230]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84231]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84232]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84233]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:07:10 Ffff-MacBook-Pro xpcproxy[84234]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:15 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84242]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84243]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84244]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84245]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84246]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84247]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro xpcproxy[84248]: libcoreservices: _dirhelper_userdir: 557: bootstrap_look_up returned (ipc/send) invalid destination port
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Resynced!, ID:  32
+Mar 30 09:41:16 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Resynced!, ID:  32
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1067231f8). One of the two will be used. Which one is undefined.
+Mar 30 09:41:20 Ffff-MacBook-Pro remindd[84268]: objc[84268]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x109b46938). One of the two will be used. Which one is undefined.
+Mar 30 09:51:39 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:02:23 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:13:12 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:15:54 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7882 , mProcessID:  84805 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:18:42 Ffff-MacBook-Pro timed[146]: settimeofday({0x5e819d52,0x78136}) == 0
+Mar 30 10:19:30 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:20:14 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.AddressBook.abd): Service only ran for 2 seconds. Pushing respawn out by 8 seconds.
+Mar 30 10:23:52 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:32:50 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:33:53 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:33:58 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # AddClient #  success , mClientID:  7903 , mProcessID:  85034 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7896 , mProcessID:  85106 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # RemClient #  success , mClientID:  7889 , mProcessID:  84914 , mIsNativeEndian:  1 , mBundleID:  com.apple.WebKit.WebContent
+Mar 30 10:41:51 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.WebKit.WebContent.C16D9ECB-CC0F-4CB4-9DBF-BF47B0EB9A3A[85104]): Service exited with abnormal code: 1
+Mar 30 10:44:08 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 10:48:05 Ffff-MacBook-Pro com.apple.xpc.launchd[1] (com.apple.xpc.launchd.domain.user.502): Service "com.apple.xpc.launchd.unmanaged.loginwindow.180" tried to register for endpoint "com.apple.tsm.uiserver" already registered by owner: com.apple.TextInputMenuAgent
+Mar 30 10:48:35 --- last message repeated 1 time ---
+
+│  └─ group(*)
+│     └─ source(*) -> qwewqe
+│  └─ group(*)
+│     └─ source(*) -> qeweqw
+│  └─ group(*)
+│     └─ source(*) -> eqweqweqweqweqw
+Mar 30 11:02:24 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit and /usr/libexec/remindd. One of the two will be used. Which one is undefined.
+Mar 30 11:07:14 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMCDChangeTrackingState is implemented in both /System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit (0x7fff9bb960a8) and /usr/libexec/remindd (0x1062361f8). One of the two will be used. Which one is undefined.
+Mar 30 11:07:15 Ffff-MacBook-Pro remindd[85443]: objc[85443]: Class REMDAAccountInfo is implemented in both /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/Versions/A/DACalDAV (0x7fff97ba37d0) and /System/Library/PrivateFrameworks/CDDataAccess.framework/Frameworks/DACalDAV.framework/DADaemonCalDAV.bundle/Contents/MacOS/DADaemonCalDAV (0x10966c938). One of the two will be used. Which one is undefined.
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to addClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:08:48 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to addClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:00 Ffff-MacBook-Pro AccountProfileRemoteViewService[85470]: objc[85470]: Class AOSUISpyglassAccountChangeHelper is implemented in both /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI and /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/XPCServices/AccountProfileRemoteViewService.xpc/Contents/MacOS/AccountProfileRemoteViewService. One of the two will be used. Which one is undefined.
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispSpeaker # Failed to remClient #  enabled , mClientID:  7910 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:10:08 Ffff-MacBook-Pro coreaudiod[212]: [VM] KrispMic # Failed to remClient #  enabled , mClientID:  7911 , mProcessID:  85460 , mIsNativeEndian:  1
+Mar 30 11:13:03 Ffff-MacBook-Pro syslogd[108]: ASL Sender Statistics
+Mar 30 11:13:09 Ffff-MacBook-Pro login[85509]: USER_PROCESS: 85509 ttys013
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDClient is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
+Mar 30 11:13:13 Ffff-MacBook-Pro syncdefaultsd[85540]: objc[85540]: Class SYDJournal is implemented in both /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults and /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd. One of the two will be used. Which one is undefined.
