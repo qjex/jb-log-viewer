@@ -143,7 +143,7 @@ class LogReader(file: Path) : Closeable {
      * Reads next block after [block].
      *
      * The algorithm reads next [BUFFER_SIZE] bytes after [block].
-     * Then those bytes are splitted in the list of [Part].
+     * Then those bytes are split in the list of [Part].
      * Each [Part] is either the entire line ending with '\n' or the string containing [PART_LIMIT] bytes.
      * If in the latter case ends with some not finished utf8 byte sequence,
      * this sequence is trimmed and would go into the next [Part]
