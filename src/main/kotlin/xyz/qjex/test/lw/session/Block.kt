@@ -9,6 +9,13 @@ data class Block(
         get() = start + length
 }
 
+/**
+ * [Part] represents a full line ending with new line or part of the line (the length of it defined by [LogReader]
+ *
+ * @property line the actual line if file.
+ * @property data full line or its part.
+ * @property containsNewLine true if the [line] ends with [data].
+ */
 data class Part(
         val line: Int,
         val data: String,

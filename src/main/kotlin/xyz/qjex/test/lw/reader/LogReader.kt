@@ -17,7 +17,6 @@ private const val BUFFER_SIZE = 4 * 1024
 class LogReader(file: Path) : Closeable {
 
     private val fileChannel: FileChannel = FileChannel.open(file, StandardOpenOption.READ)
-    private val bufferArray = ByteArray(BUFFER_SIZE)
 
     /**
      * Starts reading from [requestedLine] line
@@ -33,8 +32,8 @@ class LogReader(file: Path) : Closeable {
         var bytesRead = 0L
         var lastFullLineStart = 0L
         var currentLineStart = 0L
+        val buffer = ByteBuffer.allocate(BUFFER_SIZE)
         readingLoop@ while (true) {
-            val buffer = ByteBuffer.wrap(bufferArray)
             val currentRead = fileChannel.read(buffer)
             if (currentRead <= 0) {
                 break
@@ -50,6 +49,7 @@ class LogReader(file: Path) : Closeable {
                     currentLineStart = bytesRead
                 }
             }
+            buffer.position(0)
         }
         return createBlock(lastFullLineStart, currentLine)
     }

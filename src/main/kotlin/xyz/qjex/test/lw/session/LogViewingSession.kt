@@ -36,11 +36,11 @@ class LogViewingSession(
 ) {
     private lateinit var file: Path
     private lateinit var logReader: LogReader
-    private lateinit var pushDataTask: ScheduledFuture<*>
     private val sessionLock = ReentrantLock()
     private val scheduler = Executors.newScheduledThreadPool(1)
     private val loadedBlocks: Deque<Block> = LinkedList()
     private var loadedParts = 0
+    private var pushDataTask: ScheduledFuture<*>? = null
 
     init {
         if (fileName == null || !filesService.validFileName(fileName)) {
@@ -48,7 +48,6 @@ class LogViewingSession(
         } else {
             file = filesService.resolve(fileName)
             logReader = LogReader(file)
-            pushDataTask = scheduler.scheduleWithFixedDelay({ pushData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
         }
     }
 
@@ -75,7 +74,7 @@ class LogViewingSession(
     }
 
     fun close() {
-        pushDataTask.cancel(false)
+        pushDataTask?.cancel(false)
         logReader.close()
         scheduler.shutdown()
     }
@@ -91,6 +90,9 @@ class LogViewingSession(
     }
 
     private fun setLine(requestedLine: Int) {
+        if (pushDataTask == null) { // start task on first command in session
+            pushDataTask = scheduler.scheduleWithFixedDelay({ pushData() }, FOLLOWER_UPDATE_DELAY_MS, FOLLOWER_UPDATE_DELAY_MS, TimeUnit.MILLISECONDS)
+        }
         val block = logReader.findBlockByLine(requestedLine)
         loadedBlocks.clear()
         loadedBlocks.addFirst(block)
@@ -105,7 +107,7 @@ class LogViewingSession(
             } else {
                 loadedBlocks.addFirst(block)
                 loadedParts += block.parts.size
-                val toDelete = cleanUp { loadedBlocks.pollLast() }
+                val toDelete = deleteExcessiveBlocks { loadedBlocks.pollLast() }
                 sendExtendResponse(EXTEND_TOP_COMMAND, toDelete, block)
             }
         }
@@ -118,13 +120,13 @@ class LogViewingSession(
             } else {
                 loadedBlocks.addLast(block)
                 loadedParts += block.parts.size
-                val toDelete = cleanUp { loadedBlocks.pollFirst() }
+                val toDelete = deleteExcessiveBlocks { loadedBlocks.pollFirst() }
                 sendExtendResponse(EXTEND_BOTTOM_COMMAND, toDelete, block)
             }
         }
     }
 
-    private fun cleanUp(cleanUpFunction: () -> Block): Int {
+    private fun deleteExcessiveBlocks(cleanUpFunction: () -> Block): Int {
         var toDelete = 0
         while (loadedBlocks.size > 2 && loadedParts > MAX_LOADED_PARTS) {
             val cleaned = cleanUpFunction().parts.size

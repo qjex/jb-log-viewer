@@ -117,8 +117,6 @@ function sendExtendBottom() {
 }
 
 function handler(message) {
-    console.log(message);
-
     let parts = message.split('|');
     switch (parts[0]) {
         case EXTEND_TOP_COMMAND :
